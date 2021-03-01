@@ -12,7 +12,7 @@
 
 ### サイトテーマ
 
-映画、SNS
+映画でつながるSNS
 
 ### テーマを選んだ理由
 
@@ -40,9 +40,8 @@ Netflixでは、機械学習により映画をおすすめしているが、人�
 映画を探す時、映画から繋がるSNSを利用したい時
 
 ## 設計書
-後ほど追記
 
-## チャレンジ要素一覧
+## 機能一覧
 https://docs.google.com/spreadsheets/d/1z1IJ9QoUw8kiMXPbgmBNQUYC6-B3bFmLY3B2cIeAetI/edit#gid=0
 
 ## 開発環境
@@ -53,6 +52,5 @@ https://docs.google.com/spreadsheets/d/1z1IJ9QoUw8kiMXPbgmBNQUYC6-B3bFmLY3B2cIeA
 - IDE：Cloud9
 
 ## 使用素材
-以下後ほど追記
 - 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
 - 使用しない場合は、使用素材の項目をREADMEから削除してください。
