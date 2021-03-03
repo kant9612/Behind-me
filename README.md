@@ -1,24 +1,56 @@
-# README
+# Behind me
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
 
-Things you may want to cover:
+自分の好きな映画をリスト化し、他のユーザと共有するWebサービス。
+自分の公開する映画リストには、タイトルや、ジャンル、自分の感想等を自由に決めることができる。
 
-* Ruby version
+他のユーザはトップページから、各ジャンルの人気の映画リストランキングや検索機能から、映画リストを検索することができる。
 
-* System dependencies
+さらに、公開されている映画リストに対して、ユーザは5段階評価やお気に入りをすることができたり、
+他のユーザをフォローしたりするようなSNS機能もある。
 
-* Configuration
+### サイトテーマ
 
-* Database creation
+映画でつながるSNS
 
-* Database initialization
+### テーマを選んだ理由
 
-* How to run the test suite
+コロナ禍で自宅にいる時間が長くなり、映画を観る機会が増えている。
+さらに、Netflix、Amazon Prime Videoなどのサブスクリプションの登場により、映画を気軽に観やすくなった。
 
-* Services (job queues, cache servers, search engines, etc.)
+Netflixでは、機械学習により映画をおすすめしているが、人間は傾向から外れたおすすめができ、それを共有できるアプリケーションを作りたいと考えた。
 
-* Deployment instructions
+例: 感動する映画が見たい時に、機械が判定すると、ヒューマンドラマやドキュメンタリーなどのジャンルに偏ってしまう可能性がある。
+だが、子供向け映画の中にも大人が感動するような映画があるはずであるので、映画の推薦（おすすめ）は人間が主観的にするべきである。
 
-* ...
+かつ、SNSにすることで、より人にフォーカスし、その人のおすすめを知りたい人に役に立つ。
+
+例: 稲川淳二のおすすめホラー映画5選、最近結婚した友人の最近見た映画3つ
+
+また、おすすめ映画を紹介するサイトは多いが、SNSにすることでより気軽に、フォロワーなどたくさんの人のおすすめが見られる。
+その結果として、映画を通して人との繋がりが生まれる。
+
+### ターゲットユーザ
+
+映画が好きな人・映画で繋がりが欲しい人
+
+### 主な利用シーン
+
+映画を探す時、映画から繋がるSNSを利用したい時
+
+## 設計書
+
+## 機能一覧
+https://docs.google.com/spreadsheets/d/1z1IJ9QoUw8kiMXPbgmBNQUYC6-B3bFmLY3B2cIeAetI/edit#gid=0
+
+## 開発環境
+- OS：Linux (CentOS)
+- 言語：HTML, CSS, JavaScript, Ruby, SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
+
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
