@@ -1,6 +1,6 @@
-<h1>映画リスト投稿フォーム</h1>
+<h1>映画リスト投稿</h1>
 <%= form_with model: @list, local:true do |f| %>
-  <h4>画像</h4>
+  <h4>リストトップ画像</h4>
   <%= f.attachment_field :image %>
   <h4>リストタイトル</h4>
   <%= f.text_field :list_title %>

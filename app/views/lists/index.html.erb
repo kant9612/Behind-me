@@ -1,9 +1,21 @@
-<% @lists.each do |list| %>
-<div>
-  <%= attachment_image_tag list, :image %>
-  <p>投稿ユーザー画像：<%= image_tag('sample-author1.jpg') %></p>
-  <p>リストタイトル：<%= list.list_title %></p>
-  <p>リスト説明：<%= list.description %></p>
-  <p>ユーザーネーム：<%= list.user.name %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h2>User info</h2>
+      <%= render 'users/info' %>
+	  </div>
+	  <div class="col-md-8 offset-md-1">
+	    <h2>Lists</h2>
+	      <% @lists.each do |list| %>
+          <div>
+            <%= attachment_image_tag list, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
+            <p>リストタイトル：<%= link_to list.list_title, list_path(list.id) %></p>
+            <p>リスト説明：<%= list.description %></p>
+            <p>ユーザーネーム：<%= list.user.name %></p>
+          </div>
+        <% end %>
+	  </div>
+  </div>
 </div>
-<% end %>
+
+

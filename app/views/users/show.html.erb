@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+		<div class="col-md-8 offset-md-4">
+		  <h2>My Page</h2>
+	      <% @lists.each do |list| %>
+          <div>
+            <%= attachment_image_tag list, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
+            <p>リストタイトル：<%= link_to list.list_title, list_path(list.id) %></p>
+            <p>リスト説明：<%= list.description %></p>
+            <p>ユーザーネーム：<%= list.user.name %></p>
+          </div>
+        <% end %>
+	  </div>
+	  </div>
+  </div>
+</div>
