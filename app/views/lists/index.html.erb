@@ -13,6 +13,7 @@
             <p>リスト説明：<%= list.description %></p>
             <p>ユーザーネーム：<%= list.user.name %></p>
             <p>コメント数：<%= list.list_comments.count %></p>
+            <p class="like-btn"><%= render "likes/like-btn", list: list %></p>
           </div>
         <% end %>
 	  </div>

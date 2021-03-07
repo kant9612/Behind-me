@@ -17,6 +17,6 @@
   <% end %>
 </table>
 <%= form_with model:[@list,@list_comment], local: true do |f| %>
-  <%= f.text_area :comment, size:"90x5", placeholder: "コメントやメッセージを送る" %>
+  <%= f.text_area :comment, size:"90x5", placeholder: "コメントを書く" %>
   <%= f.submit '送信'%>
 <% end %>
