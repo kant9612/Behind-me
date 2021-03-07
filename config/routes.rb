@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/home/about" => 'homes#about'
   resources :lists do
     resources :movies, only: [:create, :destroy]
+    resources :list_comments, only: [:create, :destroy]
   end
 
   resources :users

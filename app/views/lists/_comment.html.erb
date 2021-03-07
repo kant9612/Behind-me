@@ -1,0 +1,22 @@
+<h5>コメント一覧</h5>
+<table>
+  <% @list.list_comments.each do |list_comment| %>
+    <% list_comment_user = list_comment.user %>
+    <tr>
+    	<td>
+    		<%= link_to user_path(list_comment_user), class: "user_#{list_comment_user.id}" do %>
+      		<%= attachment_image_tag list_comment_user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size: "50x50" %><br>
+      		<%= list_comment_user.name %>
+    		<% end %>
+    	</td>
+    	<td><%= list_comment.comment %></td>
+    	<% if current_user == list_comment_user %>
+      	<td><%= link_to 'Destroy', list_list_comment_path(list_comment.list_id, list_comment.id), class: 'btn-sm btn-danger', method: :delete %></td>
+    	<% end %>
+    </tr>
+  <% end %>
+</table>
+<%= form_with model:[@list,@list_comment], local: true do |f| %>
+  <%= f.text_area :comment, size:"90x5", placeholder: "コメントやメッセージを送る" %>
+  <%= f.submit '送信'%>
+<% end %>

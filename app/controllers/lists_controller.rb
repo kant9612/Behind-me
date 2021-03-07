@@ -20,6 +20,7 @@ class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
     @movie = Movie.new
+    @list_comment = ListComment.new
   end
 
   def edit

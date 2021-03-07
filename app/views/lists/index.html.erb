@@ -12,6 +12,7 @@
             <p>リストタイトル：<%= link_to list.list_title, list_path(list.id) %></p>
             <p>リスト説明：<%= list.description %></p>
             <p>ユーザーネーム：<%= list.user.name %></p>
+            <p>コメント数：<%= list.list_comments.count %></p>
           </div>
         <% end %>
 	  </div>
