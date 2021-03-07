@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # userに紐づいている（user消えたらリストも消える）
   has_many :lists, dependent: :destroy
+  has_many :movies, dependent: :destroy
   attachment :profile_image
 end

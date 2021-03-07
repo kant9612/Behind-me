@@ -4,21 +4,22 @@ class MoviesController < ApplicationController
   def create
     @list = List.find(params[:list_id])
 		@movie = Movie.new(movie_params)
-		@movie.list_id = @list.id
-		@movie.user_id = current_user.id
+		@movie.user = current_user
+		# @movie.list_id = @list.id
+		# @movie.user_id = current_user.id
 		@movie.save
-		redirect_to request.referer
+		redirect_to edit_list_path(@list)
   end
 
   def destroy
     @list = List.find(params[:list_id])
-		@movie = @list.movie.find(params[:id])
+		@movie = @list.movies.find(params[:id])
 		@movie.destroy
 		redirect_to request.referer
   end
 
   private
 	def movie_params
-		params.require(:movie).permit(:title)
+		params.require(:movie).permit(:title, :list_id)
 	end
 end

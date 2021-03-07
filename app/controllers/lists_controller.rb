@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   # インスタンス変数に空のインスタンスを渡して、リストの投稿ができるようにする
   def new
     @list = List.new
@@ -8,7 +10,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.user_id = current_user.id
     @list.save
-    redirect_to list_path(@list.id)
+    redirect_to edit_list_path(@list.id)
   end
 
   def index
@@ -17,10 +19,12 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @movie = Movie.new
   end
 
   def edit
     @list = List.find(params[:id])
+    @movie = Movie.new
     if @list.user_id != current_user.id
       redirect_to lists_path
     end
@@ -44,5 +48,11 @@ class ListsController < ApplicationController
   private
   def list_params
     params.require(:list).permit(:image, :list_title, :description)
+  end
+  def ensure_correct_user
+    @list = List.find(params[:id])
+    unless @list.user == current_user
+      redirect_to lists_path
+    end
   end
 end

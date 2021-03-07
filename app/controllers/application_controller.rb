@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  # これは削除すべきかもしれない
+  protect_from_forgery with: :null_session
   # ユーザー登録・ログイン認証の前にconfigure_permitted_parametersを実行
   before_action :configure_permitted_parameters, if: :devise_controller?
 

@@ -18,6 +18,14 @@
             <% end %>
 				  </tr>
 		    </table>
+		    <table>
+    		  <% @list.movies.each do |movie| %>
+    		    <% movie_user = movie.user %>
+    		    <tr>
+    		    	<td><%= movie.title %></td>
+    		    </tr>
+    		  <% end %>
+    		</table>
 		</div>
   </div>
 </div>
