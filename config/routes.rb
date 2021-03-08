@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # 検索機能追加
+  get '/search'=>'search#search'
   # ログイン機能のためdeviseを導入
   devise_for :users
 
@@ -15,4 +17,5 @@ Rails.application.routes.draw do
   	get 'followings' => 'relationships#followings', as: 'followings'
   	get 'followers' => 'relationships#followers', as: 'followers'
   end
+
 end

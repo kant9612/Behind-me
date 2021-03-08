@@ -25,6 +25,7 @@
               <li class="nav-item"><%= link_to "Users", users_path, class: 'nav-link text-dark' %></li>
               <li class="nav-item"><%= link_to "Lists", lists_path, class: 'nav-link text-dark' %></li>
               <li class="nav-item"><%= link_to "logout", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %></li>
+              <li class="nav-item"><%= render 'layouts/search' %></li>
             <% else %>
               <li class="nav-item"><%= link_to "Home", root_path, class: 'nav-link text-dark' %></li>
               <li class="nav-item"><%= link_to "About", home_about_path, class: 'nav-link text-dark' %></li>
