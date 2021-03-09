@@ -1,0 +1,3 @@
+$("#list_<%= @list.id %> .comments-count").html("コメント数: <%= @list.list_comments.count %>");
+$(".list_comments").html("<%= j(render 'lists/comment', list: @list) %>");
+$("#list_comment_comment").val("");

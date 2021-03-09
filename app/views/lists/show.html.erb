@@ -27,8 +27,15 @@
     		    	<td><%= movie.title %></td>
     		    </tr>
     		  <% end %>
-    		</table><br>
-    		<%= render 'lists/comment', list: @list, list_comment: @list_comment %>
+    		</table>
+    		<table class="list_comments">
+    			<h5>コメント一覧</h5>
+    			<%= render partial: "lists/comment", locals: { list: @list, list_comment: @list_comment} %>
+    		</table>
+    		<%= form_with model:[@list,@list_comment], remote:true do |f| %>
+				  <%= f.text_area :comment, size:"90x5", placeholder: "コメントを書く" %>
+				  <%= f.submit '送信'%>
+				<% end %>
 		</div>
   </div>
 </div>

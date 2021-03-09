@@ -7,11 +7,11 @@ class ListCommentsController < ApplicationController
 		@list_comment.list_id = @list.id
 		@list_comment.user_id = current_user.id
 		@list_comment.save
-		if @list_comment.save
-  		redirect_to list_path(@list.id)
-		else
-		  render 'lists/show'
-		end
+		# if @list_comment.save
+  # 		redirect_to list_path(@list.id)
+		# else
+		#   render 'lists/show'
+		# end
 		# 非同期にする際はview/bookcomments/create.js.erbを参照しにいく
 	end
 
@@ -19,7 +19,7 @@ class ListCommentsController < ApplicationController
 		@list = List.find(params[:list_id])
 		@list_comment = @list.list_comments.find(params[:id])
 		@list_comment.destroy
-		redirect_to request.referer
+		# redirect_to request.referer
 		# 非同期にする際はview/bookcomments/destroy.js.erbを参照しにいく
 	end
 

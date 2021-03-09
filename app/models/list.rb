@@ -10,7 +10,7 @@ class List < ApplicationRecord
   # 画像アップ用のメソッド
   attachment :image
   # バリデーション
-  validates :title, presence: true
+  validates :list_title, presence: true
   validates :description, presence: true
 
   def liked_by?(user)
