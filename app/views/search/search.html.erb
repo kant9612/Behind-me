@@ -1,23 +1,23 @@
 <% if @model == 'user' %>
   <table class='table'>
-      <thead>
-          <tr>
-              <th>Image</th>
-              <th>Name</th>
-              <th>Following</th>
-              <th>Follower</th>
-          </tr>
-      </thead>
-      <tbody>
-          <% @datas.each do |data| %>
-              <tr>
-                  <td><%= attachment_image_tag(data, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %></td>
-                  <td><%= data.name %></td>
-                  <td><%= data.followings.count %></td>
-                  <td><%= data.followers.count %></td>
-              </tr>
-          <% end %>
-      </tbody>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Following</th>
+        <th>Follower</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @datas.each do |data| %>
+        <tr>
+          <td><%= attachment_image_tag(data, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %></td>
+          <td><%= data.name %></td>
+          <td><%= data.followings.count %></td>
+          <td><%= data.followers.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 <% else %>
   <table class='table'>

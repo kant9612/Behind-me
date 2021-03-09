@@ -13,7 +13,7 @@
             <p>リスト説明：<%= list.description %></p>
             <p>ユーザーネーム：<%= list.user.name %></p>
             <p>コメント数：<%= list.list_comments.count %></p>
-            <p class="like-btn"><%= render "likes/like-btn", list: list %></p>
+            <p class="like-btn_<%= list.id %>"><%= render partial: "likes/like-btn", locals: { list: list} %></p>
           </div>
         <% end %>
 	  </div>

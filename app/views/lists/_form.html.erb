@@ -1,9 +1,9 @@
-<%= form_with model: list, local: true do |f| %>
+<%= form_with model:list, local:true do |f| %>
   <div class="form-group"><label>リストタイトル</label><br>
     <%= f.text_field :list_title, class: "form-control" %></div>
   <div class="form-group"><label>リスト説明文</label><br>
     <%= f.text_area :description, class: "form-control" %></div>
-  <!--ここにコメントのように映画リストを追加する-->
+
     <table>
       <% @list.movies.each do |movie| %>
         <% movie_user = movie.user %>
@@ -19,7 +19,6 @@
     <%= f.submit '完了', class: "btn btn-success col-xs-12" %>
   </div>
 <% end %>
-<br>
 <div class="form-group"><label>リストに映画を追加</label></div>
   <%= form_with model:[@list,@movie], local: true do |f| %>
     <%= f.text_field :title, class: "form-control", placeholder: "映画タイトルをここに記載" %>

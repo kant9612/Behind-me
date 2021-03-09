@@ -47,13 +47,16 @@ class ListsController < ApplicationController
   end
 
   private
+
   def list_params
     params.require(:list).permit(:image, :list_title, :description)
   end
+
   def ensure_correct_user
     @list = List.find(params[:id])
     unless @list.user == current_user
       redirect_to lists_path
     end
   end
+
 end
