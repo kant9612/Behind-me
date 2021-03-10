@@ -10,6 +10,11 @@
           <div>
             <%= attachment_image_tag list, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
             <p>リストタイトル：<%= link_to list.list_title, list_path(list.id) %></p>
+            <p>ジャンル：
+              <% list.categories.each do |category| %>
+						    <%= category.name %>
+						  <% end %>
+            </p>
             <p>リスト説明：<%= list.description %></p>
             <p>ユーザーネーム：<%= list.user.name %></p>
             <p>コメント数：<%= list.list_comments.count %></p>

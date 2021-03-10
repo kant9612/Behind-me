@@ -49,7 +49,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:image, :list_title, :description)
+    params.require(:list).permit(:image, :list_title, :description, category_ids: [])
   end
 
   def ensure_correct_user

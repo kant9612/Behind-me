@@ -19,6 +19,11 @@
             <%= attachment_image_tag list, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
             <p>リストタイトル：<%= link_to list.list_title, list_path(list.id) %></p>
             <p>リスト説明：<%= list.description %></p>
+            <p>ジャンル：
+              <% list.categories.each do |category| %>
+						    <%= category.name %>
+						  <% end %>
+            </p>
           </div>
         <% end %>
 	  </div>

@@ -11,6 +11,11 @@
 				    <td><%= attachment_image_tag @list.user, :profile_image, :fill, 100, 100, format:'jpeg', fallback: "no_image.jpg" %><br>
 				    <%= link_to @list.user.name, user_path(@list.user.id) %></td>
 				    <td><%= link_to @list.list_title, list_path(@list.id) %></td>
+				    <td>
+				    <% @list.categories.each do |category| %>
+						  <%= category.name %>
+						<% end %>
+						</td>
 				    <td><%= @list.description %></td>
 				    <td class="comments-count">コメント数: <%= @list.list_comments.count %></td>
 				    <td class="like-btn_<%= @list.id %>"><%= render partial: "likes/like-btn", locals: { list: @list} %></td>

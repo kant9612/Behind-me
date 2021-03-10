@@ -5,8 +5,11 @@ class List < ApplicationRecord
   has_many :movies, dependent: :destroy
   # list一つ一つにコメントがいくつか紐づいている
   has_many :list_comments, dependent: :destroy
-
+  # list一つ一つにいいねがいくつか紐づいている
   has_many :likes, dependent: :destroy
+  # listとcategoryのアソシエーション（多対多）
+  has_many :list_categories
+  has_many :categories, through: :list_categories
   # 画像アップ用のメソッド
   attachment :image
   # バリデーション
