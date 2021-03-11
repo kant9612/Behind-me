@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :movies, dependent: :destroy
   has_many :list_comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  # likeでランキングを作成するため
+  has_many :liked_lists, through: :likes, source: :list
   attachment :profile_image
   # バリデーション
   validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
