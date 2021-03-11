@@ -5,6 +5,26 @@
 				<% if user_signed_in? %>
 					<%= link_to "My Pageへ", user_path(current_user.id), class: "btn btn-info btn-sm btn-block mb-3" %>
 					<%= link_to "映画リスト一覧へ", lists_path, class: "btn btn-success btn-sm btn-block mb-3" %>
+					<div>
+						<h5>ランキング上位</h5>
+							<% @lists.each do |list| %>
+								<table>
+									<td>
+										<%= attachment_image_tag list, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
+      				      <p>リストタイトル：<%= link_to list.list_title, list_path(list.id) %></p>
+      				      <p>ジャンル：
+      				        <% list.categories.each do |category| %>
+										    <%= category.name %>
+										  <% end %>
+      				      </p>
+      				      <p>リスト説明：<%= list.description %></p>
+      				      <p>ユーザーネーム：<%= list.user.name %></p>
+      				      <p>コメント数：<%= list.list_comments.count %></p>
+      				      <p class="like-btn_<%= list.id %>"><%= render partial: "likes/like-btn", locals: { list: list} %></p>
+									</td>
+								</table>
+							<% end %>
+					</div>
 				<% else %>
 					<div class="row">
 					 <%= link_to "Log in", new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3" %>
@@ -13,26 +33,6 @@
 					 <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success btn-sm btn-block" %>
 					</div>
 				<% end %>
-			</div>
-			<div>
-				<h5>ランキング上位</h5>
-					<% @lists.each do |list| %>
-						<table>
-							<td>
-								<%= attachment_image_tag list, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
-      		      <p>リストタイトル：<%= link_to list.list_title, list_path(list.id) %></p>
-      		      <p>ジャンル：
-      		        <% list.categories.each do |category| %>
-								    <%= category.name %>
-								  <% end %>
-      		      </p>
-      		      <p>リスト説明：<%= list.description %></p>
-      		      <p>ユーザーネーム：<%= list.user.name %></p>
-      		      <p>コメント数：<%= list.list_comments.count %></p>
-      		      <p class="like-btn_<%= list.id %>"><%= render partial: "likes/like-btn", locals: { list: list} %></p>
-							</td>
-						</table>
-					<% end %>
 			</div>
 		</div>
 	</div>
