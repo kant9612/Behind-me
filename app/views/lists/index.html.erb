@@ -29,6 +29,20 @@
 						    <%= category.name %>
 						  <% end %>
             </p>
+            <!--星評価-->
+             <div id="star-rate-<%= list.id %>"></div>
+              <script>
+              $('#star-rate-<%= list.id %>').raty({
+                size: 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                half: true,
+                readOnly: true,
+                score: <%= list.rate %>,
+              });
+              </script>
+            <!--/星評価-->
             <p>リスト説明：<%= list.description %></p>
             <p>ユーザーネーム：<%= list.user.name %></p>
             <p>コメント数：<%= list.list_comments.count %></p>
