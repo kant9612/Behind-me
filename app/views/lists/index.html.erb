@@ -1,8 +1,22 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-      <h2>User info</h2>
-      <%= render 'users/info', user: current_user %>
+      <table class="table table-bordered category-table">
+        <thead>
+          <tr>
+            <th>ジャンル</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @categories.each do |category| %>
+          <tr>
+            <td>
+              <%= link_to category.name, search_path('search[model]': "list", 'search[content]': category.id, 'search[how]': "match") %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
 	  </div>
 	  <div class="col-md-8 offset-md-1">
 	    <h2>Lists</h2>

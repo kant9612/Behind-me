@@ -1,4 +1,7 @@
-<% if @model == 'user' %>
+<% if @datas.empty? %>
+  <h5>該当ありません</h5>
+<% else %>
+  <% if @model == 'user' %>
   <table class='table'>
     <thead>
       <tr>
@@ -38,4 +41,5 @@
       <% end %>
     </tbody>
   </table>
+<% end %>
 <% end %>
