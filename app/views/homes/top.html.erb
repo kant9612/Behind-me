@@ -6,7 +6,7 @@
 					<%= link_to "My Pageへ", user_path(current_user.id), class: "btn btn-info btn-sm btn-block mb-3" %>
 					<%= link_to "映画リスト一覧へ", lists_path, class: "btn btn-success btn-sm btn-block mb-3" %>
 					<div>
-						<h5>ランキング上位</h5>
+						<h5>いいねランキング上位</h5>
 							<% @lists.each do |list| %>
 								<table>
 									<td>
