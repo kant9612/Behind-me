@@ -16,6 +16,9 @@
 @import "bootstrap";
 //いいねの赤いハート
 .heart_red{color:#e54747;}
-
-//いいねの青いハート
+//いいねしていない状態
 .heart_none{color:#808080;}
+//お気に入り済
+.bookmark_done{color:#444;}
+//お気に入りしていない状態
+.bookmark_notyet{color:#808080;}

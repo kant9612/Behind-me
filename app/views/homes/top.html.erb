@@ -21,6 +21,7 @@
       				      <p>ユーザーネーム：<%= list.user.name %></p>
       				      <p>コメント数：<%= list.list_comments.count %></p>
       				      <p class="like-btn_<%= list.id %>"><%= render partial: "likes/like-btn", locals: { list: list} %></p>
+      				      <p class="favorite-btn_<%= list.id %>"><%= render partial: 'favorites/favorite-btn', locals: { list: list} %></p>
 									</td>
 								</table>
 							<% end %>
