@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :lists do
     resources :movies, only: [:create, :destroy]
     resources :list_comments, only: [:create, :destroy]
+    resources :reviews, only: [:create, :destroy]
     resource :likes, only: [:create, :destroy]
   end
 

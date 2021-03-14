@@ -33,14 +33,19 @@
     		    </tr>
     		  <% end %>
     		</table>
+    		<table class="reviews">
+    			<h5>評価一覧</h5>
+    			<%= render "lists/review", { list: @list, review: @review} %>
+    		</table>
     		<!--ここに評価機能を実装-->
-    		<%= form_with model: @list, local: true do |f| %>
+    		<%= form_with model: @review, url: list_reviews_path(@list.id), local: true do |f| %>
     			<!--評価するリストのid-->
     			<%= f.hidden_field :list_id, { value: @list.id} %>
     			<!--評価の星-->
     			<div class="form-group row" id="star">
   				  <%= f.label :rate,'評価 ', class:'col-md-3 col-form-label' %>
   				  <%= f.hidden_field :rate, id: :review_star %>
+  				  <%= f.text_area :comment %>
   				</div>
   				<!--評価javascript-->
   				<script>
@@ -49,10 +54,8 @@
   				  starOff:  '<%= asset_path('star-off.png') %>',
   				  starOn : '<%= asset_path('star-on.png') %>',
   				  starHalf: '<%= asset_path('star-half.png') %>',
-  				  // Listモデルのrateカラムに値を保存する
-  				  scoreName: 'list[rate]',
-  				  // ★半分ok
-  				  half: true,
+  				  scoreName: 'review[rate]', // Listモデルのrateカラムに値を保存する
+  				  half: true, // ★半分ok
   				});
   				</script>
   				<%= f.submit '評価する', class:"btn btn-success" %>

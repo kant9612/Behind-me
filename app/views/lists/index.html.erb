@@ -30,7 +30,7 @@
 						  <% end %>
             </p>
             <!--星評価-->
-             <div id="star-rate-<%= list.id %>"></div>
+             <div id="star-rate-<%= list.id %>">レビュー <%= list.reviews.count %> 件</div>
               <script>
               $('#star-rate-<%= list.id %>').raty({
                 size: 36,
@@ -39,7 +39,8 @@
                 starHalf: '<%= asset_path('star-half.png') %>',
                 half: true,
                 readOnly: true,
-                score: <%= list.rate %>,
+                // 平均点を算出し、round関数で切り上げ
+                score: "<%= list.reviews.average(:rate).to_f.round(1) %>",
               });
               </script>
             <!--/星評価-->
