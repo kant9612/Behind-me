@@ -14,7 +14,7 @@ class SearchController < ApplicationController
     if model == 'user'
       User.where(name: content)
     elsif model == 'list'
-      List.where(list_title: content)
+      List.joins(:list_categories).where('list_categories.category_id = ?', content)
     end
   end
   def partical(model, content)
