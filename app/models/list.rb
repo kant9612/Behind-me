@@ -9,6 +9,8 @@ class List < ApplicationRecord
   has_many :favorites, dependent: :destroy
   # list一つ一つにいいねがいくつか紐づいている
   has_many :likes, dependent: :destroy
+
+  has_many :reviews, dependent: :destroy
   # likeでランキングを作成するため
   has_many :liked_users, through: :likes, source: :user
   # listとcategoryのアソシエーション（多対多）
