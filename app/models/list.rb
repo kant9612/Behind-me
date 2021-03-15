@@ -3,6 +3,8 @@ class List < ApplicationRecord
   belongs_to :user
   # list一つ一つにmovieがいくつか紐付いている
   has_many :movies, dependent: :destroy
+  # 親子同時保存
+  accepts_nested_attributes_for :movies, allow_destroy: true
   # list一つ一つにコメントがいくつか紐づいている
   has_many :list_comments, dependent: :destroy
   # list一つ一つにお気に入りがいくつか紐づいている

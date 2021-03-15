@@ -4,13 +4,14 @@ class ListsController < ApplicationController
   # インスタンス変数に空のインスタンスを渡して、リストの投稿ができるようにする
   def new
     @list = List.new
+    @movies = @list.movies.build
   end
 
   def create
     @list = List.new(list_params)
     @list.user_id = current_user.id
     @list.save
-    redirect_to edit_list_path(@list.id)
+    redirect_to list_path(@list.id)
   end
 
   def index
@@ -51,7 +52,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:image, :list_title, :description, category_ids: [])
+    params.require(:list).permit(:image, :list_title, :description, category_ids: [], movies_attributes: [:id, :title, :impression, :list_id, :user_id])
   end
 
   def ensure_correct_user
