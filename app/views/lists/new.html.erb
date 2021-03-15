@@ -4,7 +4,6 @@
   <%= f.attachment_field :image %>
   <h4>リストタイトル</h4>
   <%= f.text_field :list_title %>
-  <!--<h4>ジャンル</h4>-->
   <%= f.label :category, 'ジャンル' %>
   <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
     <%= category.label do %>
