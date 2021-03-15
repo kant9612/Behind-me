@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get "/home/about" => 'homes#about'
   resources :lists do
-    resources :movies, only: [:create, :destroy]
+    resources :movies
     resources :list_comments, only: [:create, :destroy]
     resources :reviews, only: [:create, :destroy]
     resource :likes, only: [:create, :destroy]

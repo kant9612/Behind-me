@@ -1,0 +1,7 @@
+<div class="nested-fields">
+  <p>映画タイトル</p>
+    <%= f.text_field :title, class: "" %>
+  <p>この映画について</p>
+    <%= f.text_area :impression, class: "" %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+</div>

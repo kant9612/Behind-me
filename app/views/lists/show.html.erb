@@ -30,15 +30,19 @@
     		  <% @list.movies.each do |movie| %>
     		    <% movie_user = movie.user %>
     		    <tr>
-    		    	<td><%= movie.title %></td>
+    		    	<div>＜映画タイトル＞</div>
+    		    	<div><%= movie.title %></div>
+    		    	<div>＜この映画について（感想など）＞</div>
+    		    	<div><%= movie.impression %></div>
     		    </tr>
     		  <% end %>
     		</table>
+    		<br>
     		<table class="reviews">
     			<h5>評価一覧</h5>
     			<%= render "lists/review", { list: @list, review: @review} %>
     		</table>
-    		<!--ここに評価機能を実装-->
+    		<!--評価機能-->
     		<%= form_with model: @review, url: list_reviews_path(@list.id), local: true do |f| %>
     			<!--評価するリストのid-->
     			<%= f.hidden_field :list_id, { value: @list.id} %>
