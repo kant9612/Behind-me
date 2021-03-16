@@ -73,3 +73,5 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 # 親子同時保存
 gem "cocoon"
+# 動的フォーム作成のため
+gem "nested_form"

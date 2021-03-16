@@ -16,6 +16,7 @@
 
   <%= f.fields_for :movies do |movie| %>
     <%= render 'movie-form', f: movie %>
+    <%= f.link_to_add :記事を追加, :moviegs %>
   <% end %>
 
   <%= f.submit '投稿' %>

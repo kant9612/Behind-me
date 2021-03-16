@@ -13,6 +13,8 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+// 動的フォーム作成のため
+//= require jquery_nested_form
 //
 //= require rails-ujs
 //= require activestorage
