@@ -19,9 +19,3 @@
     <%= f.submit '完了', class: "btn btn-success col-xs-12" %>
   </div>
 <% end %>
-<div class="form-group"><label>リストに映画を追加</label></div>
-  <%= form_with model:[@list,@movie], local: true do |f| %>
-    <%= f.text_field :title, class: "form-control", placeholder: "映画タイトルをここに記載" %>
-    <%= f.hidden_field :list_id, value: list.id %>
-    <%= f.submit '追加' %>
-  <% end %>

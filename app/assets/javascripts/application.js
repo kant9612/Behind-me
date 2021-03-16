@@ -14,6 +14,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //
+//= require cocoon
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
@@ -791,16 +792,3 @@
   })();
 }));
 // 星評価ここまで
-// 動的フォーム生成
-$(document).ready(function () {
-  $('#add_movie_button').on('click', function(){
-    $('.nested-fields').append('<h1>こんにちは！</h1>');
-    // alert("クリックされました");
-  });
-});
-
-// $(document).ready(function () {
-//   $('#add_movie_button').on('click', 'add', function(){
-//     $('.nested-field').clone(true).insertAfter('.nested-field');
-//   });
-// });

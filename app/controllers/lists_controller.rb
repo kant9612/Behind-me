@@ -11,7 +11,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.user_id = current_user.id
     @list.save
-    redirect_to list_path(@list.id)
+    redirect_to lists_path
   end
 
   def index

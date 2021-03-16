@@ -17,7 +17,9 @@
   <%= f.fields_for :movies do |movie| %>
     <%= render 'movie-form', f: movie %>
   <% end %>
+  <div class="links">
+      <%= link_to_add_association "さらに映画を追加", f, :movies, partial: 'movie-form' %>
+  </div>
 
   <%= f.submit '投稿' %>
 <% end %>
-<button id="add_movie_button">＋</button>
