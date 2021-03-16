@@ -19,6 +19,7 @@
 //= require turbolinks
 //= require_tree .
 
+// 星評価
 /*!
  * Raty - A Star Rating Plugin
  *
@@ -789,3 +790,4 @@
     return Raty;
   })();
 }));
+// 星評価ここまで
