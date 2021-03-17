@@ -73,3 +73,8 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 # 親子同時保存
 gem "cocoon"
+# デプロイ用
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
