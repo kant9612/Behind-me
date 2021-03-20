@@ -22,3 +22,80 @@
 .bookmark_done{color:#444;}
 //お気に入りしていない状態
 .bookmark_notyet{color:#808080;}
+// スライドショーのため
+#testbox{
+  height: 550px;
+}
+.testimage1 {
+  background-image: image-url("pexels-adrien-olichon-3709370.jpg");
+}
+.testimage2 {
+  background-image: image-url("pexels-andrea-piacquadio-3811814.jpg");
+}
+.testimage3 {
+  background-image: image-url("pexels-andrea-piacquadio-3811851.jpg");
+}
+
+// ここからデザイン
+.bg_base {
+  background-color:#2d2c38;
+}
+.text_base {
+  color: #d4d3de;
+  text-decoration: none;
+}
+.btn_base {
+  position: relative;
+  text-decoration: none;
+  transition: .15s ease-out;
+  -webkit-transform: translateZ(0);
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 3rem;
+  padding: 1.2rem 5rem 1.2rem 3rem;
+  // color: inherit;
+  text-align: center;
+  line-height: 1;
+  box-shadow: 0 2px 0 #614f38;
+  text-decoration: none;
+  background-color: #5a4eb4;
+  // arrow
+  &:before,
+  &:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+  }
+  &:before {
+    right: 2rem;
+    width: .7rem;
+    height: 1px;
+    background: #614f38;
+  }
+  &:after {
+    right: 20px;
+    width: 6px;
+    height: 6px;
+    border-top: 1px solid #614f38;
+    border-right: 1px solid #614f38;
+    transform: rotate(45deg);
+  }
+  &:hover {
+    color:#fff;
+    background-color: #22202f;
+    transform: translateY(2px);
+    box-shadow: 0 0 0 rgba(245, 209, 0, 0.75);
+    opacity: 1;
+    &:before {
+      background-color: #fff;
+    }
+    &:after {
+      border-color: #fff;
+    }
+  }
+}

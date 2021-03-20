@@ -17,7 +17,7 @@
 //= require cocoon
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+// = require turbolinks
 //= require_tree .
 
 // 星評価
