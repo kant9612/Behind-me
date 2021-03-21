@@ -25,6 +25,7 @@
 // スライドショーのため
 #testbox{
   height: 550px;
+  backgroung-position: center;
 }
 .testimage1 {
   background-image: image-url("pexels-adrien-olichon-3709370.jpg");
@@ -99,3 +100,56 @@
     }
   }
 }
+.response {
+  padding-right: 10px;
+}
+
+.rank {
+  display: block;
+  text-decoration: none;
+  background-color: #22202f;
+  transition: 0.2s;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.rank:hover {
+  background-color: #2d2c38;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.rank_box {
+  display: flex;
+  float: left;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 50px auto;
+  // width: 400px;
+  list-style: none;
+}
+
+// .rank {
+//   width: 32%;
+// }
+
+.rank_img_box {
+  width: 320px;
+  height: 200px;
+}
+
+.rank_img {
+  display: block;
+  width: 320px;
+  height: 200px;
+}
+
+.rank_title {
+  margin: 0;
+  // padding: 0 20px 20px;
+  font-size: 14px;
+}
+
+// p {
+//   margin: 0;
+//   padding: 20px 20px 5px;
+//   font-size: 10px;
+// }
