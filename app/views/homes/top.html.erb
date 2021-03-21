@@ -1,53 +1,55 @@
+<% if user_signed_in? %>
 <div class="container">
-	<!--スライドショー-->
+	<div class="row">
+		<div class="col-sm-4 offset-sm-2">
+			<%= link_to "My Pageへ", user_path(current_user.id), class: "btn btn-md text_base btn_base" %>
+		</div>
+		<div class="col-sm-4">
+			<%= link_to "映画リスト一覧へ", lists_path, class: "btn btn-md text_base btn_base" %>
+		</div>
+	</div>
+	<div class="text_base mt-3">
+		<h5>いいねランキング上位</h5>
+			<% @lists.each do |list| %>
+			<ul class="rank_box">
+  			<li class="rank">
+  			  <a href="", class="ranl_items">
+  			    <div class="rank_img_box"><%= attachment_image_tag list, :image, fallback: "no_image.jpg", class:"rank_img" %></div>
+  			    <p><%= list.user.name %></p>
+  			    <h5 class="rank_title"><%= link_to list.list_title, list_path(list.id) %></h5>
+  			    <% list.categories.each do |category| %>
+			    	<div class="badge badge-secondary">
+							  <%= category.name %>
+			    	</div>
+			    	<% end %>
+			    	<div>
+			    		<%= list.description %>
+			    	</div>
+			    	<div class="d-flex">
+			    		<div class="response like-btn_<%= list.id %>"><%= render partial: "likes/like-btn", locals: { list: list} %></div>
+   			  	  <div class="response favorite-btn_<%= list.id %>"><%= render partial: 'favorites/favorite-btn', locals: { list: list} %></div>
+			    		<div class="response">コメント：<%= list.list_comments.count %> 件</div>
+			    	</div>
+  			  </a>
+  			</li>
+  		</ul>
+			<% end %>
+	</div>
+</div>
+<% else %>
 	<div id="testbox">
 		<div id="testimages">
 			<div class="testimage1"></div>
 			<div class="testimage2"></div>
 			<div class="testimage3"></div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
-			<div class="btn-wrapper col-10 mx-auto">
-
-				<% if user_signed_in? %>
-					<%= link_to "My Pageへ", user_path(current_user.id), class: "btn btn-md text_base" %>
-					<%= link_to "映画リスト一覧へ", lists_path, class: "btn btn-md text_base" %>
-					<div>
-						<h5>いいねランキング上位</h5>
-							<% @lists.each do |list| %>
-								<table>
-									<td>
-										<%= attachment_image_tag list, :image, :fill, 60, 60, fallback: "no_image.jpg" %>
-      				      <p>リストタイトル：<%= link_to list.list_title, list_path(list.id) %></p>
-      				      <p>ジャンル：
-      				        <% list.categories.each do |category| %>
-										    <%= category.name %>
-										  <% end %>
-      				      </p>
-      				      <p>リスト説明：<%= list.description %></p>
-      				      <p>ユーザーネーム：<%= list.user.name %></p>
-      				      <p>コメント数：<%= list.list_comments.count %></p>
-      				      <p class="like-btn_<%= list.id %>"><%= render partial: "likes/like-btn", locals: { list: list} %></p>
-      				      <p class="favorite-btn_<%= list.id %>"><%= render partial: 'favorites/favorite-btn', locals: { list: list} %></p>
-									</td>
-								</table>
-							<% end %>
-					</div>
-				<% else %>
-					<div class="">
-
-						<div>
-							<%= link_to "Log in", new_user_session_path, class: "btn btn-sm text_base btn_base" %>
-						</div>
-						<div>
-							<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-sm text_base btn_base" %>
-						</div>
-					</div>
-
-				<% end %>
+		<div class="row mt-2">
+			<div class="col-sm-2 offset-sm-4">
+				<%= link_to "Log in", new_user_session_path, class: "btn btn-sm text_base btn_base" %>
+			</div>
+			<div class="col-sm-2">
+				<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-sm text_base btn_base" %>
 			</div>
 		</div>
 	</div>
-</div>
+<% end %>
