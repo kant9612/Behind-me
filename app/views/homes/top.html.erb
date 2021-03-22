@@ -15,8 +15,8 @@
   			<li class="rank">
   			  <a href="", class="ranl_items">
   			    <div class="rank_img_box"><%= attachment_image_tag list, :image, fallback: "no_image.jpg", class:"rank_img" %></div>
-  			    <p><%= list.user.name %></p>
-  			    <h5 class="rank_title"><%= link_to list.list_title, list_path(list.id) %></h5>
+  			    <p class="text_base"><%= list.user.name %></p>
+  			    <h5 class="rank_title"><%= link_to list.list_title, list_path(list.id), class:"text_base" %></h5>
   			    <% list.categories.each do |category| %>
 			    	<div class="badge badge-secondary">
 							  <%= category.name %>
