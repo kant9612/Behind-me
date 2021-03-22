@@ -1,45 +1,63 @@
 <% if @datas.empty? %>
-  <h5>該当ありません</h5>
+  <div class="container">
+    <div class="mt-5">
+      <h3>検索結果：0件</h3>
+    </div>
+    <div class="mt-5">
+      <p>
+        お探しのキーワードにマッチするものが見つかりませんでした。<br>
+        We couldn't find any matches for that.
+      </p>
+      <p>
+        もう一度、別のキーワードにてお探しいただければと思います。<br>
+        Please try searching with another keywords.
+      </p>
+    </div>
+  </div>
 <% else %>
   <% if @model == 'user' %>
-  <table class='table'>
-    <thead>
-      <tr>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Following</th>
-        <th>Follower</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @datas.each do |data| %>
+  <div>
+    <table class='table text_base'>
+      <thead>
         <tr>
-          <td><%= attachment_image_tag(data, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %></td>
-          <td><%= data.name %></td>
-          <td><%= data.followings.count %></td>
-          <td><%= data.followers.count %></td>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Following</th>
+          <th>Follower</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% else %>
-  <table class='table'>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Title</th>
-        <th>Opinion</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @datas.each do |data| %>
+      </thead>
+      <tbody>
+        <% @datas.each do |data| %>
+          <tr>
+            <td><%= attachment_image_tag(data, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %></td>
+            <td><%= data.name %></td>
+            <td><%= data.followings.count %></td>
+            <td><%= data.followers.count %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <% else %>
+  <div>
+    <table class='table text_base'>
+      <thead>
         <tr>
-          <td><%= attachment_image_tag(data.user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %></td>
-          <td><%= data.list_title %></td>
-          <td><%= data.description %></td>
+          <th></th>
+          <th>Title</th>
+          <th>Opinion</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
+      </thead>
+      <tbody>
+        <% @datas.each do |data| %>
+          <tr>
+            <td><%= attachment_image_tag(data.user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %></td>
+            <td><%= data.list_title %></td>
+            <td><%= data.description %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <% end %>
 <% end %>
