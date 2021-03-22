@@ -137,13 +137,26 @@
   font-size: 14px;
 }
 .user_pic_box {
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
   position: relative;
   overflow: hidden;
   border-radius: 100px;
 }
 .user_pic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+}
+.user_index_pic_box {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 100px;
+}
+.user_index_pic {
   position: absolute;
   top: 50%;
   left: 50%;
