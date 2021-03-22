@@ -1,9 +1,10 @@
-<table class="table">
-  <tr><%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg"%></tr>
-  <tr>
-    <th>name</th>
-    <th><%= user.name %></th>
-  </tr>
+<table class="table table-borderless text_base">
+  <h3><%= user.name %></h3>
+  <div class="user_pic_box">
+    <div class="user_pic">
+      <%= attachment_image_tag user, :profile_image, :fill, 150, 150, fallback: "no_image.jpg" %>
+    </div>
+  </div>
   <tr>
     <th>introduction</th>
     <th><%= user.introduction %></th>
