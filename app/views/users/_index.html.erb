@@ -2,20 +2,20 @@
   <tbody>
     <% users.each do |user| %>
       <tr class="user_hover p-1">
-          <td class="user_index_pic_box">
-          <%= link_to user_path(user.id) do %>
-            <div class="user_index_pic">
-              <%= attachment_image_tag user, :profile_image, size: "75x75", fallback: "no_image.jpg" %>
-            </div>
-          <% end %>
-          </td>
-          <td>
-          <%= link_to user_path(user.id) do %>
-            <div class="text_base">
-              <%= user.name %>
-            </div>
-           <% end %>
-          </td>
+        <td class="user_index_pic_box">
+        <%= link_to user_path(user.id) do %>
+          <div class="user_index_pic">
+            <%= attachment_image_tag user, :profile_image, size: "75x75", fallback: "no_image.jpg" %>
+          </div>
+        <% end %>
+        </td>
+        <td>
+        <%= link_to user_path(user.id) do %>
+          <div class="text_base">
+            <%= user.name %>
+          </div>
+         <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
