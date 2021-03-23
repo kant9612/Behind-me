@@ -1,45 +1,55 @@
 <div class="container">
   <div class="row">
   	<div class="col-md-3">
-      <h2>User info</h2>
       <%= render 'users/info', user: @list.user %>
 	  </div>
 		<div class="col-md-8 offset-md-1">
 		  <h2>List detail</h2>
-		    <table class="table">
-				  <tr id="list_<%= @list.id %>">
-				    <td><%= attachment_image_tag @list.user, :profile_image, :fill, 100, 100, format:'jpeg', fallback: "no_image.jpg" %><br>
-				    <%= link_to @list.user.name, user_path(@list.user.id) %></td>
-				    <td><%= link_to @list.list_title, list_path(@list.id) %></td>
-				    <td>
-				    <% @list.categories.each do |category| %>
-						  <%= category.name %>
-						<% end %>
-						</td>
-				    <td><%= @list.description %></td>
-				    <td class="comments-count">コメント数: <%= @list.list_comments.count %></td>
-				    <td class="like-btn_<%= @list.id %>"><%= render partial: "likes/like-btn", locals: { list: @list} %></td>
-				    <td class="favorite-btn_<%= @list.id %>"><%= render partial: 'favorites/favorite-btn', locals: { list: @list} %></td>
-				    <% if @list.user_id == current_user.id %>
-              <td><%= link_to "Edit", edit_list_path(@list.id), class: "btn-sm btn-success edit_list_#{@list.id}" %></td>
-              <td><%= link_to "Destroy", list_path(@list.id), method: :delete, "data-confirm" => "削除しますか？", class: "btn-sm btn-danger destroy_list_#{@list.id}" %></td>
+				<div id="list_<%= @list.id %>", class="media mt-3 text_base">
+				  <div class="d-flex mr-3"><%= attachment_image_tag @list.user, :profile_image, size: "150x100", fallback: "no_image.jpg" %></div>
+				  <div class="media-body">
+            <h5 class="mt-0"><%= link_to @list.list_title, list_path(@list.id), class:"text_base" %></h5>
+            <div>by <%= @list.user.name %></div>
+            <% @list.categories.each do |category| %>
+              <div class="badge badge-secondary">
+                <%= category.name %>
+              </div>
             <% end %>
-				  </tr>
-		    </table>
+              <div>
+                <%= @list.description %>
+              </div>
+          </div>
+				  <% if @list.user_id == current_user.id %>
+				  <div>
+          	<div>
+          		<%= link_to "Edit", edit_list_path(@list.id), class: "btn-sm btn-success edit_list_#{@list.id}" %>
+          	</div>
+          	<div class="mt-2">
+          		<%= link_to "Delete", list_path(@list.id), method: :delete, "data-confirm" => "削除しますか？", class: "btn-sm btn-danger 	destroy_list_#{@list.id}" %>
+          	</div>
+          </div>
+          <% end %>
+				</div>
+
 		    <table>
     		  <% @list.movies.each do |movie| %>
     		    <% movie_user = movie.user %>
     		    <tr>
-    		    	<div>＜映画タイトル＞</div>
-    		    	<div><%= movie.title %></div>
-    		    	<div>＜この映画について（感想など）＞</div>
-    		    	<div><%= movie.impression %></div>
+    		    	<div class="mt-2">『　<%= movie.title %>　』</div>
+    		    	<div>　ー<%= movie.impression %></div>
     		    </tr>
     		  <% end %>
     		</table>
+
+    		<div class="d-flex mt-5">
+        	<div class="response like-btn_<%= @list.id %>"><%= render partial: "likes/like-btn", locals: { list: @list} %></div>
+        	<div class="response favorite-btn_<%= @list.id %>"><%= render partial: 'favorites/favorite-btn', locals: { list: @list} %></div>
+        	<div class="comments-count">コメント：<%= @list.list_comments.count %> 件</div>
+        </div>
+
     		<br>
     		<table class="reviews">
-    			<h5>評価一覧</h5>
+    			<h5>レビュー</h5>
     			<%= render "lists/review", { list: @list, review: @review} %>
     		</table>
     		<!--評価機能-->
@@ -50,7 +60,7 @@
     			<div class="form-group row" id="star">
   				  <%= f.label :rate,'評価 ', class:'col-md-3 col-form-label' %>
   				  <%= f.hidden_field :rate, id: :review_star %>
-  				  <%= f.text_area :comment %>
+  				  <%= f.text_area :comment, size:"40x3", placeholder: "評価と一緒にコメントを書く" %>
   				</div>
   				<!--評価javascript-->
   				<script>

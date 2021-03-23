@@ -3,8 +3,8 @@
   <tr>
   	<td>
   		<%= link_to user_path(review_user), class: "user_#{review_user.id}" do %>
-    		<%= attachment_image_tag review_user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size: "50x50" %><br>
-    		<%= review_user.name %>
+    		<div><%= attachment_image_tag review_user, :profile_image, size: "50x50", fallback: "no_image.jpg" %></div>
+    		<div class="ml-3"><%= review_user.name %></div>
   		<% end %>
   	</td>
   	<td>
@@ -24,7 +24,7 @@
   	</td>
   	<td><%= review.comment %></td>
   	<% if current_user == review_user %>
-    	<td><%= link_to 'Destroy', list_review_path(review.list_id, review.id), class: 'btn-sm btn-danger', method: :delete, local:true %></td>
+    	<td><%= link_to 'Delete', list_review_path(review.list_id, review.id), class: 'btn-sm btn-danger', method: :delete, local:true %></td>
   	<% end %>
   </tr>
 <% end %>
