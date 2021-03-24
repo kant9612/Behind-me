@@ -1,15 +1,13 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-3">
+  <div class="row justify-content-center">
+    <div class="">
       <%= render 'users/info', user: @user %>
-	  </div>
-		<div class="col-md-8 offset-md-1">
-		  <h5>作成したリスト一覧</h5>
+		  <h4>作成したリスト</h4>
 	      <% @lists.each do |list| %>
-	      <div class="media mt-3">
-          <div class="d-flex mr-3"><%= attachment_image_tag list, :image, size: "150x100", fallback: "no_image.jpg" %></div>
+	      <div class="media mt-3 mypage_list">
+          <div class="d-flex m-3"><%= attachment_image_tag list, :image, size: "150x100", fallback: "no_image.jpg" %></div>
           <div class="media-body">
-            <h5 class="mt-0"><%= link_to list.list_title, list_path(list.id), class:"text_base" %></h5>
+            <h5 class="mt-3"><%= link_to list.list_title, list_path(list.id), class:"text_base" %></h5>
             <% list.categories.each do |category| %>
 			    	  <div class="badge badge-secondary">
 							  <%= category.name %>
@@ -29,12 +27,12 @@
 
         <% if @user == current_user %>
           <% if @favorite_list.present? %>
-          <h5 class="mt-4">お気に入り一覧</h5>
+          <h4 class="">お気に入り</h4>
             <% @favorite_list.each do |list| %>
-              <div class="media mt-3">
-                <div class="d-flex mr-3"><%= attachment_image_tag list, :image, size: "150x100", fallback: "no_image.jpg" %></div>
+              <div class="media mt-3 mypage_list">
+                <div class="d-flex m-3"><%= attachment_image_tag list, :image, size: "150x100", fallback: "no_image.jpg" %></div>
                 <div class="media-body">
-                  <h5 class="mt-0"><%= link_to list.list_title, list_path(list.id), class:"text_base" %></h5>
+                  <h5 class="mt-3"><%= link_to list.list_title, list_path(list.id), class:"text_base" %></h5>
                   <% list.categories.each do |category| %>
 			          	  <div class="badge badge-secondary">
 				      			  <%= category.name %>
@@ -53,12 +51,12 @@
             <% end %>
           <% end %>
           <% if @like_list.present? %>
-          <h5 class="mt-4">いいね一覧</h5>
+          <h4 class="">いいね</h4>
             <% @like_list.each do |list| %>
-              <div class="media mt-3">
-                <div class="d-flex mr-3"><%= attachment_image_tag list, :image, size: "150x100", fallback: "no_image.jpg" %></div>
+              <div class="media mt-3 mypage_list">
+                <div class="d-flex m-3"><%= attachment_image_tag list, :image, size: "150x100", fallback: "no_image.jpg" %></div>
                 <div class="media-body">
-                  <h5 class="mt-0"><%= link_to list.list_title, list_path(list.id), class:"text_base" %></h5>
+                  <h5 class="mt-3"><%= link_to list.list_title, list_path(list.id), class:"text_base" %></h5>
                   <% list.categories.each do |category| %>
 			          	  <div class="badge badge-secondary">
 			        			  <%= category.name %>

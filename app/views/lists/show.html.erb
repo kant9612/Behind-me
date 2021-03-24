@@ -30,7 +30,7 @@
           </div>
           <% end %>
 				</div>
-
+        <hr width="100">
 		    <table>
     		  <% @list.movies.each do |movie| %>
     		    <% movie_user = movie.user %>
@@ -49,6 +49,7 @@
 
     		<br>
     		<table class="reviews">
+    		  <hr width="100">
     			<h5>レビュー</h5>
     			<%= render "lists/review", { list: @list, review: @review} %>
     		</table>
@@ -56,6 +57,7 @@
     		<%= form_with model: @review, url: list_reviews_path(@list.id), local: true do |f| %>
     			<!--評価するリストのid-->
     			<%= f.hidden_field :list_id, { value: @list.id} %>
+    			<hr width="100">
     			<!--評価の星-->
     			<div class="form-group row" id="star">
   				  <%= f.label :rate,'評価 ', class:'col-md-3 col-form-label' %>
@@ -75,12 +77,15 @@
   				</script>
   				<%= f.submit '評価する', class:"btn btn-success" %>
     		<% end %>
+    		<hr width="100", class="mb-5">
     		<table class="list_comments">
-    			<h5>コメント一覧</h5>
+    			<h5 class="">コメント一覧</h5>
     			<%= render partial: "lists/comment", locals: { list: @list, list_comment: @list_comment} %>
     		</table>
     		<%= form_with model:[@list,@list_comment], remote:true do |f| %>
-				  <%= f.text_area :comment, size:"90x5", placeholder: "コメントを書く" %>
+				  <div>
+				    <%= f.text_area :comment, size:"80x5", placeholder: "コメントを書く" %>
+				  </div>
 				  <%= f.submit '送信'%>
 				<% end %>
 		</div>
