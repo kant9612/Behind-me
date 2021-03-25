@@ -21,7 +21,7 @@
 				  <% if @list.user_id == current_user.id %>
 				  <div>
           	<div>
-          		<%= link_to "Edit", edit_list_path(@list.id), class: "btn-sm btn-success edit_list_#{@list.id}" %>
+          		<%= link_to "Edit", edit_list_path(@list.id), class: "btn-sm btn-block btn-success text-center edit_list_#{@list.id}" %>
           	</div>
           	<div class="mt-2">
           		<%= link_to "Delete", list_path(@list.id), method: :delete, "data-confirm" => "削除しますか？", class: "btn-sm btn-danger 	destroy_list_#{@list.id}" %>
@@ -56,25 +56,27 @@
     		<%= form_with model: @review, url: list_reviews_path(@list.id), local: true do |f| %>
     			<!--評価するリストのid-->
     			<%= f.hidden_field :list_id, { value: @list.id} %>
-    			<hr width="100">
     			<!--評価の星-->
-    			<div class="form-group row" id="star">
+    			<div class="form-group row mt-5" id="star">
   				  <%= f.label :rate,'評価 ', class:'col-md-3 col-form-label' %>
   				  <%= f.hidden_field :rate, id: :review_star %>
-  				  <%= f.text_area :comment, size:"40x3", placeholder: "評価と一緒にコメントを書く" %>
+  				  <%= f.text_area :comment, class:"form-control", placeholder: "評価と一緒にコメントを書く（星だけで評価もできます）" %>
   				</div>
-  				<!--評価javascript-->
-  				<script>
-  				$('#star').raty({
-  				  size     : 36,
-  				  starOff:  '<%= asset_path('star-off.png') %>',
-  				  starOn : '<%= asset_path('star-on.png') %>',
-  				  starHalf: '<%= asset_path('star-half.png') %>',
-  				  scoreName: 'review[rate]', // Listモデルのrateカラムに値を保存する
-  				  half: true, // ★半分ok
-  				});
-  				</script>
-  				<%= f.submit '評価する', class:"btn btn-success" %>
+  				<div>
+  				  <!--評価javascript-->
+  				  <script>
+  				  $('#star').raty({
+  				    size     : 36,
+  				    starOff:  '<%= asset_path('star-off.png') %>',
+  				    starOn : '<%= asset_path('star-on.png') %>',
+  				    starHalf: '<%= asset_path('star-half.png') %>',
+  				    scoreName: 'review[rate]', // Listモデルのrateカラムに値を保存する
+  				    half: true, // ★半分ok
+  				  });
+  				  </script>
+  				</div>
+  				  <%= f.submit '評価する', class:"btn btn-secondary" %>
+
     		<% end %>
     		<hr width="100", class="">
     		<h4>コメント</h4>
@@ -85,7 +87,7 @@
 				  <div class="mt-5">
 				    <%= f.text_area :comment, size:"80x5", placeholder: "コメントを書く" %>
 				  </div>
-				  <%= f.submit '送信'%>
+				  <%= f.submit '送信', class:"btn btn-secondary"%>
 				<% end %>
 		</div>
   </div>
