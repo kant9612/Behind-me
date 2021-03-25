@@ -1,25 +1,39 @@
-<h1>映画リスト投稿</h1>
-<%= form_with model: @list, local:true do |f| %>
-  <h4>リストトップ画像</h4>
-  <%= f.attachment_field :image %>
-  <h4>リストタイトル</h4>
-  <%= f.text_field :list_title %>
-  <%= f.label :category, 'ジャンル' %>
-  <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
-    <%= category.label do %>
-      <%= category.check_box %>
-      <%= category.text %>
+<h4>新規投稿</h4>
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <%= form_with model: @list, local:true do |f| %>
+      <div>
+        <%= f.label :トップ画像, class:"mt-3" %><br />
+        <%= f.attachment_field :image %>
+      </div>
+      <div>
+        <%= f.label :ムービーリストタイトル, class:"mt-3" %><br />
+        <%= f.text_field :list_title, class:"form-control", :placeholder => "例）私の好きな映画５選" %>
+      </div>
+      <div>
+        <%= f.label :category, 'ジャンル', class:"mt-3" %><br>
+        <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
+          <%= category.label do %>
+            <%= category.check_box %>
+            <%= category.text %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <%= f.label :ムービーリスト説明文, class:"mt-3" %><br />
+      <%= f.text_area :description, class:"form-control", :placeholder => "例）私の人生を変えた映画５本です。" %>
+
+      <h4 class="mt-3">リスト内容</h4>
+      <%= f.fields_for :movies do |movie| %>
+        <%= render 'movie-form', f: movie %>
+      <% end %>
+      <div class="links row justify-content-center">
+        <%= link_to_add_association "さらに映画を追加", f, :movies, partial: 'movie-form', class:"btn btn-secondary text_base" %>
+      </div>
+
+      <div class="row justify-content-center mt-5">
+        <%= f.submit '　投稿', class:"btn_base text_base" %>
+      </div>
     <% end %>
-  <% end %>
-  <h4>リスト説明文</h4>
-  <%= f.text_area :description %>
-
-  <%= f.fields_for :movies do |movie| %>
-    <%= render 'movie-form', f: movie %>
-  <% end %>
-  <div class="links">
-    <%= link_to_add_association "さらに映画を追加", f, :movies, partial: 'movie-form' %>
   </div>
-
-  <%= f.submit '投稿' %>
-<% end %>
+</div>
