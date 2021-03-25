@@ -2,14 +2,14 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-3 offset-md-3">
-			<%= link_to "My Pageへ", user_path(current_user.id), class: "btn btn-md text_base btn_base" %>
+			<%= link_to "マイページへ", user_path(current_user.id), class: "btn btn-md text_base btn_base" %>
 		</div>
 		<div class="">
 			<%= link_to "映画リスト一覧へ", lists_path, class: "btn btn-md text_base btn_base" %>
 		</div>
 	</div>
 	<div class="text_base mt-3">
-		<h4 class=""><span>Popular Lists</span></h4>
+		<h4 class=""><span>人気ムービーリスト</span></h4>
 			<% @lists.each do |list| %>
 				<div class="top_rank mypage_list">
 					<div class="media mt-3">
@@ -43,13 +43,14 @@
 			<div class="testimage2"></div>
 			<div class="testimage3"></div>
 		</div>
-		<div class="row mt-2">
-			<div class="col-sm-2 offset-sm-4">
-				<%= link_to "Log in", new_user_session_path, class: "btn btn-sm text_base btn_base" %>
-			</div>
-			<div class="col-sm-2">
-				<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-sm text_base btn_base" %>
-			</div>
+
+	</div>
+	<div class="row mt-2">
+		<div class="col-sm-2 offset-sm-4">
+			<%= link_to "Log in", new_user_session_path, class: "btn btn-sm text_base btn_base" %>
+		</div>
+		<div class="col-sm-2">
+			<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-sm text_base btn_base" %>
 		</div>
 	</div>
 <% end %>

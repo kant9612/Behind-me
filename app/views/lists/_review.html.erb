@@ -4,7 +4,7 @@
   	<td>
   		<%= link_to user_path(review_user), class: "user_#{review_user.id}" do %>
     		<div><%= attachment_image_tag review_user, :profile_image, size: "50x50", fallback: "no_image.jpg" %></div>
-    		<div class="ml-3"><%= review_user.name %></div>
+    		<div class="ml-3 text_base"><%= review_user.name %></div>
   		<% end %>
   	</td>
   	<td>

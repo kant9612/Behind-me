@@ -1,6 +1,6 @@
 <table class="table table-borderless text_base">
   <tbody>
-    <% users.each do |user| %>
+    <% users.reverse.each do |user| %>
       <tr class="user_hover p-1">
         <td class="user_index_pic_box">
         <%= link_to user_path(user.id) do %>

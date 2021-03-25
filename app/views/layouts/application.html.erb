@@ -38,7 +38,7 @@
         </div>
       </nav>
     </header>
-    <div class="body">
+    <main class="mb-auto">
       <p class="notice"><%= notice %></p>
       <!--スライドショーのため（rails用の書き方にする）-->
       <%= javascript_include_tag 'jquery.min', 'data-turbolinks-track': 'reload' %>
@@ -46,6 +46,16 @@
       <%= javascript_include_tag 'script', 'data-turbolinks-track': 'reload' %>
       <%= yield %>
       </div>
-    </div>
+    </main>
+
   </body>
+  <footer>
+    <div class='container mt-5'>
+      <div class='row mt-5'>
+        <div class='mx-auto'>
+          <p>Ⓒ 2021 Behind-me</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </html>
