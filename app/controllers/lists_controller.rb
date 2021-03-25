@@ -15,7 +15,7 @@ class ListsController < ApplicationController
   end
 
   def index
-    @lists = List.all
+    @lists = List.all.page(params[:page]).per(5)
     @categories = Category.all
   end
 
