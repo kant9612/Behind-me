@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BehindMe</title>
+    <title>Bhind-Me</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <!--font awesome の導入-->
@@ -19,7 +19,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <%= link_to "Behind me", root_path, class: 'navbar-brand text_base' %>
+            <%= link_to "Bhind-Me", root_path, class: 'navbar-brand text_base logo' %>
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li class="nav-item"><%= link_to "MyPage", user_path(current_user.id), class:'nav-link text_base' %></li>
@@ -53,7 +53,7 @@
     <div class='container mt-5'>
       <div class='row mt-5'>
         <div class='mx-auto'>
-          <p>Ⓒ 2021 Behind-me</p>
+          <p>Ⓒ 2021 Bhind-Me</p>
         </div>
       </div>
     </div>
