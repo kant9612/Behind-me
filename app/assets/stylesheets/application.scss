@@ -24,7 +24,7 @@
 .bookmark_notyet{color:#808080;}
 // スライドショーのため
 #testbox{
-  height: 550px;
+  height: 720px;
   backgroung-position: center;
 }
 .testimage1 {
@@ -37,7 +37,27 @@
   background-image: image-url("pexels-andrea-piacquadio-3811851.jpg");
 }
 // ここからデザイン
+h2 {
+  position: relative;
+  padding: 0 65px;
+  text-align: center;
+}
 
+h2:before {
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  width: 100%;
+  height: 2px;
+  content: '';
+  background: #d4d3de;
+}
+
+h2 span {
+  position: relative;
+  padding: 0 1em;
+  background: #2d2c38;
+}
 h4 {
   position: relative;
   padding: 1.5rem;
@@ -152,6 +172,9 @@ h4:before {
   position: relative;
   overflow: hidden;
   border-radius: 100px;
+  margin-left: 60px;
+}
+.mypage_user_pic_box {
   margin-left: 150px;
 }
 .user_pic {

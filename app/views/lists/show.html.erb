@@ -4,8 +4,7 @@
       <%= render 'users/info', user: @list.user %>
 	  </div>
 		<div class="col-md-8 offset-md-1">
-		  <h2>List detail</h2>
-				<div id="list_<%= @list.id %>", class="media mt-3 text_base">
+				<div id="list_<%= @list.id %>", class="media mt-5 text_base">
 				  <div class="d-flex mr-3"><%= attachment_image_tag @list.user, :profile_image, size: "150x100", fallback: "no_image.jpg" %></div>
 				  <div class="media-body">
             <h5 class="mt-0"><%= link_to @list.list_title, list_path(@list.id), class:"text_base" %></h5>
@@ -48,9 +47,9 @@
         </div>
 
     		<br>
-    		<table class="reviews">
-    		  <hr width="100">
-    			<h5>レビュー</h5>
+    		<hr width="100">
+    			<h4>レビュー</h4>
+    		<table class="reviews mt-5">
     			<%= render "lists/review", { list: @list, review: @review} %>
     		</table>
     		<!--評価機能-->
@@ -77,13 +76,13 @@
   				</script>
   				<%= f.submit '評価する', class:"btn btn-success" %>
     		<% end %>
-    		<hr width="100", class="mb-5">
-    		<table class="list_comments">
-    			<h5 class="">コメント一覧</h5>
-    			<%= render partial: "lists/comment", locals: { list: @list, list_comment: @list_comment} %>
+    		<hr width="100", class="">
+    		<h4>コメント</h4>
+    		<table class="list_comments mt-5">
+    			<%= render partial: "lists/comment", locals: { list: @list, list_comment: @list_comment}, class:"mt-5" %>
     		</table>
     		<%= form_with model:[@list,@list_comment], remote:true do |f| %>
-				  <div>
+				  <div class="mt-5">
 				    <%= f.text_area :comment, size:"80x5", placeholder: "コメントを書く" %>
 				  </div>
 				  <%= f.submit '送信'%>
