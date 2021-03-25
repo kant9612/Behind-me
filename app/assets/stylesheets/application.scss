@@ -42,7 +42,6 @@ h2 {
   padding: 0 65px;
   text-align: center;
 }
-
 h2:before {
   position: absolute;
   top: calc(50% - 1px);
@@ -52,7 +51,6 @@ h2:before {
   content: '';
   background: #d4d3de;
 }
-
 h2 span {
   position: relative;
   padding: 0 1em;
