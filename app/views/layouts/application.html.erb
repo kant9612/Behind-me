@@ -9,6 +9,8 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag "skippr", :media => "all", 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--faviconの設置-->
+    <%= favicon_link_tag('favicon.ico') %>
   </head>
 
   <body class="header bg_base text_base">
@@ -41,9 +43,7 @@
     <main class="mb-auto">
       <p class="notice"><%= notice %></p>
       <!--スライドショーのため（rails用の書き方にする）-->
-      <%= javascript_include_tag 'jquery.min', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'skippr.min', 'data-turbolinks-track': 'reload' %>
-      <%= javascript_include_tag 'script', 'data-turbolinks-track': 'reload' %>
       <%= yield %>
       </div>
     </main>

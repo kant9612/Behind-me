@@ -242,3 +242,25 @@ hr {
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   border-radius: 20px;
 }
+/* ページネーション */
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination > li > a {
+  border: none;
+  color: #d4d3de;
+}
+.pagination > li > a:hover {
+  color: #5a4eb4;
+  background-color: white;
+}
+.pagination > .active > a {
+  color: #5a4eb4;
+  background-color: white;
+}
+.pagination > .active > a:hover {
+  background-color: white;
+  color: #5a4eb4;
+}
+/* --ページネーション */
