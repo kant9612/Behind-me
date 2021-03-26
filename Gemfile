@@ -83,3 +83,5 @@ group :production do
 end
 # ページネーション導入
 gem 'kaminari'
+# エラーメッセージ日本語化
+gem 'rails-i18n'
