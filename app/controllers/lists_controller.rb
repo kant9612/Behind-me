@@ -10,8 +10,12 @@ class ListsController < ApplicationController
   def create
     @list = List.new(list_params)
     @list.user_id = current_user.id
-    @list.save
-    redirect_to lists_path
+    if @list.save
+      flash[:notice] = "You have created book successfully."
+      redirect_to lists_path
+    else
+      render :new
+    end
   end
 
   def index
