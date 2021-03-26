@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      list: リスト
+    attributes:
+      list:
+        list_title: タイトル
+        description: 説明文

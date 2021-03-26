@@ -11,7 +11,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.user_id = current_user.id
     if @list.save
-      flash[:notice] = "You have created book successfully."
+      flash[:notice] = "新しい映画リストが追加されました！"
       redirect_to lists_path
     else
       render :new
