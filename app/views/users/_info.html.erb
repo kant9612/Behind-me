@@ -29,11 +29,11 @@
         <%= link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn user_btn btn_base text_base" %>
       <% end %>
     <% else %>
-      <%= link_to 'Edit My Profile', edit_user_path(user), class: "btn user_btn btn_base text_base edit_user_#{user.id}" %>
+      <%= link_to 'プロフィールを編集', edit_user_path(user), class: "btn user_btn btn_base text_base edit_user_#{user.id}" %>
 
   </div>
   <div class="row justify-content-center">
-    <%= link_to "New List", new_list_path, class:"btn user_btn btn_base text_base mt-1" %>
+    <%= link_to "新規投稿", new_list_path, class:"btn user_btn btn_base text_base mt-1" %>
     <% end %>
   </div>
 </div>

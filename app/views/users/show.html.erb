@@ -1,14 +1,16 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="">
+    <div class="col-md-5">
 
     	<div class="user_info pb-3">
 			  <table class="table table-borderless text_base">
 			    <h3 class="ml-3"><%= @user.name %></h3>
-			    <div class="user_pic_box mypage_user_pic_box">
-			      <div class="user_pic">
-			        <%= attachment_image_tag @user, :profile_image, size: "190x190", fallback: "no_image.jpg" %>
-			      </div>
+			   	<div class="row justify-container-center">
+			    	<div class="user_pic_box mypage_user_pic_box">
+			    		<div class="user_pic">
+			    			<%= attachment_image_tag @user, :profile_image, size: "190x190", fallback: "no_image.jpg" %>
+			    		</div>
+			    	</div>
 			    </div>
 			    <div class="row mt-2">
 			      <div class="col">

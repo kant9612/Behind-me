@@ -12,12 +12,12 @@ RSpec.describe List, "モデルに関するテスト", type: :model do
     it "list_titleが空白の場合にバリデーションチェックされ空白のエラーメッセージが返ってきているか" do
       list = List.new(list_title: '', description:'hoge')
       expect(list).to be_invalid
-      expect(list.errors[:list_title]).to include("can't be blank")
+      expect(list.errors[:list_title]).to include("を入力してください")
     end
     it "descriptionが空白の場合にバリデーションチェックされ空白のエラーメッセージが返ってきているか" do
       list = List.new(list_title: 'hoge', description:'')
       expect(list).to be_invalid
-      expect(list.errors[:description]).to include("can't be blank")
+      expect(list.errors[:description]).to include("を入力してください")
     end
   end
 end
