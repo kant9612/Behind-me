@@ -1,4 +1,9 @@
 <h4>新規投稿</h4>
+
+<!--エラーメッセージ-->
+<%= render 'layouts/error_list', list: @list %>
+<!--ここまでエラーメッセージ-->
+
 <div class="row justify-content-center">
   <div class="col-md-5">
     <%= form_with model: @list, local:true do |f| %>
