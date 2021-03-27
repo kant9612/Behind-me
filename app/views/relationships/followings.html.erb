@@ -1,6 +1,12 @@
-<h2>Follow Users</h2>
-<% if @users.exists? %>
-  <%= render '/users/index', users: @users %>
-<% else %>
-  <p>ユーザーはいません</p>
-<% end %>
+<div class="container">
+  <h2><span>フォロー中</span></h2>
+  <div class="row justify-content-center">
+    <div class="col-md-4 mt-5">
+      <% if @users.exists? %>
+        <%= render '/users/index', users: @users %>
+      <% else %>
+        <p class="text-center">友人やいいねと思ったムービーリストのユーザーを<br>フォローしてみよう！</p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,12 @@
-<h2>Follower Users</h2>
-<% if @users.exists? %>
-  <%= render '/users/index', users: @users %>
-<% else %>
-  <p>ユーザーはいません</p>
-<% end %>
+<div class="container">
+  <h2><span>フォロワー</span></h2>
+  <div class="row justify-content-center">
+    <div class="col-md-4 mt-5">
+      <% if @users.exists? %>
+        <%= render '/users/index', users: @users %>
+      <% else %>
+        <p class="text-center">自分のムービーリストを投稿したり、<br>様々なムービーリストを見てみよう！</p>
+      <% end %>
+    </div>
+  </div>
+</div>
