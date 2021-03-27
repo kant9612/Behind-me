@@ -854,3 +854,13 @@ $('#page-top a').click(function () {
     return false;//リンク自体の無効化
 });
 // ここまでページトップ
+
+// ハンバーガ−メニュー
+$(document).on('turbolinks:load', function() {
+  $('.menu-trigger').on('click', function(event) {
+    $(this).toggleClass('active');
+    $('#sp-menu').fadeToggle();
+    event.preventDefault();
+  });
+});
+// ここまでハンバーガーメニュー

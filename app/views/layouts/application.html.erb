@@ -20,32 +20,50 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <%= link_to "Bhind-Me", root_path, class: 'navbar-brand text_base logo' %>
-            <ul class="navbar-nav ml-auto">
-            <% if user_signed_in? %>
-              <li class="nav-item"><%= link_to "MyPage", user_path(current_user.id), class:'nav-link text_base' %></li>
-              <li class="nav-item"><%= link_to "Users", users_path, class: 'nav-link text_base' %></li>
-              <li class="nav-item"><%= link_to "Lists", lists_path, class: 'nav-link text_base' %></li>
-              <li class="nav-item"><%= link_to "logout", destroy_user_session_path, method: :delete, class: 'nav-link text_base' %></li>
-              <li class="nav-item"><%= render 'layouts/search' %></li>
-            <% else %>
-              <li class="nav-item"><%= link_to "Home", root_path, class: 'nav-link text_base' %></li>
-              <li class="nav-item"><%= link_to "About", home_about_path, class: 'nav-link text_base' %></li>
-              <li class="nav-item"><%= link_to "sign up", new_user_registration_path, class: 'nav-link text_base' %></li>
-              <li class="nav-item"><%= link_to "login", new_user_session_path, class: 'nav-link text_base' %></li>
-            <% end %>
-            </ul>
+
+          <div class="" id="sp-menu">
+            <div class="row justify-content-center">
+              <div class="col-md-4 mt-5">
+                <div class="text-center mt-5"><%= link_to "Bhind-Me", root_path, class: 'text_base logo menu_logo' %></div>
+                <ul class="mt-5">
+                <% if user_signed_in? %>
+                  <li class="menu_item"><a href="#"><%= link_to "マイページ", user_path(current_user.id), class:'nav-link text_base' %></a></li>
+                  <li class="menu_item"><a href="#"><%= link_to "ユーザー", users_path, class: 'nav-link text_base' %></a></li>
+                  <li class="menu_item"><a href="#"><%= link_to "ムービーリスト", lists_path, class: 'nav-link text_base' %></a></li>
+                  <li class="menu_item"><a href="#"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text_base' %></a></li>
+                  <li class="menu_item"><%= render 'layouts/search' %></li>
+                <% else %>
+                  <li class="menu_item"><a href="#"><%= link_to "トップページ", root_path, class: 'nav-link text_base text-center' %></a></li>
+                  <li class="menu_item"><a href="#"><%= link_to "Bhind-Meについて", home_about_path, class: 'nav-link text_base' %></a></li>
+                  <li class="menu_item"><a href="#"><%= link_to "新規会員登録", new_user_registration_path, class: 'nav-link text_base' %></a></li>
+                  <li class="menu_item"><a href="#"><%= link_to "ログイン", new_user_session_path, class: 'nav-link text_base' %></a></li>
+                <% end %>
+                </ul>
+              </div>
+            </div>
           </div>
+
+          <div id="hm-icon">
+            <a class="menu-trigger" href="#">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+          </div>
+
         </div>
       </nav>
     </header>
     <main class="mb-auto">
-      <p class="notice"><%= notice %></p>
+      <% if user_signed_in? %>
+        <div class="row justify-content-center">
+          <div class="mb-5 mt-2"><%= link_to "Bhind-Me", root_path, class: 'text-decoration-none text_base logo menu_logo' %></div>
+        </div>
+      <% end %>
       <!--スライドショーのため（rails用の書き方にする）-->
       <%= javascript_include_tag 'skippr.min', 'data-turbolinks-track': 'reload' %>
       <%= yield %>
-      </div>
+
     </main>
 
   </body>
