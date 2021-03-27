@@ -1,27 +1,43 @@
-<%= render "layouts/logo" %>
+<div class="split-box left-box">
+  <div class="mt-5"><%= link_to "Home", root_path, class: 'text-decoration-none text_base ml-5' %></div>
+</div>
 
-<div class="container">
-    <div class="col-md-8 offset-md-2">
-      <h5 class="text_base">About "Bhind-Me"</h5>
-      <p class="text_base">
-        コロナ禍で、自宅にいる時間が長くなり、サブスクリプションの普及もあって、映画を見る機会が増えた今日この頃。<br><br>
+<div class="split-box right-box">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+      <h4 class="text_base">About "Bhind-Me"</h4>
+      <p class="text_base mt-5">
+        コロナ禍でおうち時間が長くなり、サブスクリプションの普及もあって、映画を見る機会が増えた今日この頃。<br><br>
         いつも同じようなオススメをしてくる機械じゃなくて、あなたのオススメが知りたい！<br><br>
-        そう思ったのは、その人の人生を作ってきた映画はどんなものなのか知りたくなったから。<br>
+        そう思ったのは、その人の<span class="emphasis">人生を作ってきた映画</span>はどんなものなのか知りたくなったから。<br><br>
         「某怪談語り部のオススメするホラー映画ってどんなものだろう。」<br>
         「最近結婚したあの友人が最近観たハッピーな映画を観て、自分もハッピーな気持ちになりたい！」<br><br>
         その人にしかできないオススメがきっとあるはず。<br><br>
         第７の芸術といわれる映画には、時間芸術も空間芸術も夢も詰まっている。<br>
-        とか堅苦しいことは置いといて、あなたのオススメした１本が他人の人生を変えるかもしれないし、<br>
-        映画を見た後の抑えきれない気持ちを共有してみてもいいかもしれない。<br>
-        「面白い映画知らない？」って聞かれた時、あなたの熱く語れるものをぜひここに。
+        とか堅苦しいことは置いといて、あなたのオススメした１本が人の人生を変えるかもしれないし、<br>
+        映画を見た後の抑えきれない気持ちを共有してみてもいいかもしれない。<br><br>
+        「<span class="emphasis">面白い映画知らない？</span>」って聞かれた時、あなたの熱く語れるものをぜひここに。
       </p>
     </div>
-    <br>
-    <div class="col-md-8 offset-md-2">
-      <h5 class="text_base">About Me</h5>
-      <p class="text_base">
+  </div>
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+      <h4 class="text_base">About Logo</h4>
+      <p class="text_base mt-5 text-center">
+        <p class="text-center"><span class="about_logo">B</span>e<span class="about_logo">hind</span> <span class="about_logo">Me</span><br>（ その人の後ろにあるもの　⇒　その人を作ったもの　※今回の場合「映画」 ）</p>
+        <p class="text-center"><span class="about_logo">B</span>ollywood <span class="about_logo">Hind</span>u <span class="about_logo">M</span>ovi<span class="about_logo">e</span><br> 米国Hollywoodと肩を並べ、名作映画を多数制作しているインドへのリスペクトも込めて。</p>
+      </p>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+      <h4 class="text_base">About Me</h4>
+      <div class="row justify-content-center">
+        <div class="about_img mb-5"><%= image_tag "pexels-lucas-pezeta-2398354.jpg", class:"about_pic mb-5 mt-5" %></div>
+      </div>
+      <p class="text_base mt-5">
         高山 寛 | Kan TAKAYAMA<br><br>
-        1996年生まれ。関西学院大学文学部文学言語学科ドイツ文学ドイツ語学専修卒。<br>
+        1996年11月22日生まれ。<br>関西学院大学文学部文学言語学科ドイツ文学ドイツ語学専修卒。<br>
         大学卒業後、米国シアトルに半年留学。<br>
         自分が作ったものや自分が関わったもので人を助け、そこをポジティブでハッピーな空間にしたい
         と考え、エンジニアになるためにプログラミングを勉強中。<br>
@@ -30,4 +46,6 @@
         最近は流行りのA24に注目している。
       </p>
     </div>
+  </div>
+  <p class="text-center mt-5">&copy; 2021 Bhind-Me</p>
 </div>

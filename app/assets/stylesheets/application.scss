@@ -21,6 +21,25 @@
 title {
   font-family: 'Ubuntu', sans-serif;
 }
+.logo_box {
+  position: relative;
+}
+.logo_top {
+  font-size: 100px;
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  z-index: 20;
+  text-shadow: 7px 7px 0 #c3a400;
+}
+.logo_sub {
+  color: white;
+  position: absolute;
+  top: 56%;
+  left: 44%;
+  z-index: 20;
+}
 .menu_logo {
   font-size: 32px;
 }
@@ -47,20 +66,78 @@ main {
 //お気に入りしていない状態
 .bookmark_notyet{color:#808080;}
 // スライドショーのため
-#testbox{
+#screenbox{
   height: 788px;
   backgroung-position: center;
   position: static;
 }
-.testimage1 {
+.screenimage1 {
   background-image: image-url("pexels-lucas-pezeta-2398354.jpg");
 }
-.testimage2 {
+.screenimage2 {
   background-image: image-url("pexels-kyle-loftus-3045400.jpg");
 }
-.testimage3 {
-  background-image: image-url("pexels-louis-1200450.jpg");
+.screenimage3 {
+  background-image: image-url("pexels-adrien-olichon-3709370.jpg");
 }
+.top_btn_box {
+  // height: 200px;
+}
+.emphasis {
+  background: linear-gradient( transparent 70%, #c3a400 70% );
+}
+// aboutページの分割
+.split-box{
+	position: absolute;
+	width: 75%;
+	height: 100%;
+}
+
+.left-box {
+	left: 0;
+}
+
+.right-box {
+	right: 0;
+	border-left: 1px solid #22202f;
+	overflow-y: scroll;
+}
+// aboutページのデザイン
+.about_logo {
+  color: #c3a400;
+}
+.about_pic {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+.about_img {
+  position: relative;
+  // box-shadow: 50px 50px 0 #c3a400;
+  width: 200px;
+  height: 200px;
+}
+.about_img::before,
+.about_img::after {
+  content: '';
+  position: absolute;
+  transform: rotate(-35deg);
+  width: 70px;
+  height: 25px;
+  background-color: #2d2c38;
+  z-index: 1;
+}
+.about_img::before{
+  top: 42px;
+  left: -25px;
+  border-bottom: 1px solid #aaa;
+}
+.about_img::after {
+  bottom: -55px;
+  right: -25px;
+  border-top: 1px solid #aaa;
+}
+
 // ここからデザイン
 h2 {
   position: relative;
@@ -351,7 +428,7 @@ hr {
   position: fixed;
   right: 20px;
   top: 20px;
-  z-index: 20;
+  z-index: 21;
   background-color: rgba(0, 0, 0, 0.25);
 }
 .menu-trigger,
@@ -405,7 +482,7 @@ hr {
   width: 100%;
   min-height: 100%;
   display: none;
-  z-index: 20;
+  z-index: 21;
 }
 #sp-menu li {
   text-align: center;
@@ -418,4 +495,14 @@ hr {
 }
 .menu_item {
   list-style: none;
+}
+
+// レスポンシブ対応
+@media screen and (max-width: 600px) {
+	.split-box {
+		position: relative;
+		width: 100%;
+		height: auto;
+
+	}
 }
