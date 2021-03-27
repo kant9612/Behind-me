@@ -795,11 +795,11 @@
 
 // トップページのスライドショー
 $(document).on('turbolinks:load', function() {
-  $('#testimages').skippr({
+  $('#screenimages').skippr({
         //
         transition : 'fade',
         //
-        speed : 1000,
+        speed : 1500,
         //
         easing : 'easeOutQuart',
         //
@@ -836,12 +836,12 @@ function PageTopAnime() {
 	}
 }
 
-// 画面をスクロールをしたら動かしたい場合の記述
+// 画面をスクロールをしたら動かしたい場合
 $(window).scroll(function () {
 	PageTopAnime();/* スクロールした際の動きの関数を呼ぶ*/
 });
 
-// ページが読み込まれたらすぐに動かしたい場合の記述
+// ページが読み込まれたらすぐに動かしたい場合
 $(window).on('load', function () {
 	PageTopAnime();/* スクロールした際の動きの関数を呼ぶ*/
 });

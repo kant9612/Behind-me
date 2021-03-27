@@ -44,20 +44,35 @@
 	</div>
 </div>
 <% else %>
-	<div id="testbox">
-		<div id="testimages">
-			<div class="testimage1"></div>
-			<div class="testimage2"></div>
-			<div class="testimage3"></div>
+	<div id="screenbox", class="logo_box">
+		<div id="screenimages">
+			<div class="screenimage1"></div>
+			<div class="screenimage2"></div>
+			<div class="screenimage3"></div>
 		</div>
-
+		<p class="logo logo_top">Bhind-Me</p>
+		<p class="logo_sub"><small>Movies make people happy</small></p>
 	</div>
-	<div class="row mt-2">
+	<div class="row mt-5 mb-5 top_btn_box">
 		<div class="col-sm-2 offset-sm-4">
-			<%= link_to "Log in", new_user_session_path, class: "btn btn-sm text_base btn_base" %>
+			<%= link_to "ログイン", new_user_session_path, class: "btn btn-sm text_base btn_base" %>
 		</div>
 		<div class="col-sm-2">
-			<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-sm text_base btn_base" %>
+			<%= link_to "新規会員登録", new_user_registration_path, class: "btn btn-sm text_base btn_base" %>
+		</div>
+	</div>
+	<div class="mt-5 mb-5">
+		<h4 class="">How To Use<br><small>使い方</small></h4>
+		<div class="">
+			<p class="text-center mt-5">
+				自分が観た映画や観たい映画をリストにして投稿することができます。<br>
+				同じ映画を観た人や観たい人と繋がり、感想や意見を共有してみましょう。<br><br>
+				観る映画に迷ったら、他のユーザーのムービーリストから今日観る映画や<br>
+				次に見る映画を決めることもできます。<br><br>
+				今日の気分でジャンルからムービーリストを検索することもできますし、<br>
+				他の国のユーザーをフォローしておけば、よりローカルで<br>
+				あまり知られていない素敵な映画を発見できるかもしれません。
+			</p>
 		</div>
 	</div>
 <% end %>

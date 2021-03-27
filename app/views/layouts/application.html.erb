@@ -60,7 +60,7 @@
           <div class="mb-5 mt-2"><%= link_to "Bhind-Me", root_path, class: 'text-decoration-none text_base logo menu_logo' %></div>
         </div>
       <% end %>
-      <!--スライドショーのため（rails用の書き方にする）-->
+      <!--スライドショーのため-->
       <%= javascript_include_tag 'skippr.min', 'data-turbolinks-track': 'reload' %>
       <%= yield %>
 
@@ -69,6 +69,8 @@
   </body>
   <footer id="footer">
     <p id="page-top"><a href="#">Page Top</a></p>
-    <p class="text-center mt-5">&copy; 2021 Bhind-Me</p>
+    <% unless current_page?(home_about_path) %>
+      <p class="text-center mt-5">&copy; 2021 Bhind-Me</p>
+    <% end %>
   </footer>
 </html>
