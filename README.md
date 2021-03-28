@@ -52,5 +52,6 @@ https://docs.google.com/spreadsheets/d/1z1IJ9QoUw8kiMXPbgmBNQUYC6-B3bFmLY3B2cIeA
 - IDE：Cloud9
 
 ## 使用素材
-- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
-- 使用しない場合は、使用素材の項目をREADMEから削除してください。
+- https://www.pexels.com/ja-jp/
+- https://icooon-mono.com/
+- https://fontawesome.com/
