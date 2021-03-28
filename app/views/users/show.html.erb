@@ -66,6 +66,11 @@
           </div>
         </div>
         <% end %>
+        <div class="row justify-content-center mt-5">
+					<div class="text-center">
+      			<%= paginate @lists %>
+					</div>
+				</div>
 
         <% if @user == current_user %>
           <% if @favorite_list.present? %>
