@@ -5,4 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-%W[アニメ ドラマ 恋愛 ホラー 戦争 音楽 ミュージカル スポーツ SF 青春 コメディ アクション アドベンチャー ドキュメンタリー ショートフィルム サスペンス ファミリー ファンタジー ミステリー 歴史].each{ |sample| Category.create(name: sample)}
+%W[ME アニメ 恋愛 ホラー ミュージカル SF コメディ アクション アドベンチャー ドキュメンタリー ショートフィルム ファミリー ミステリー その他].each{ |sample| Category.create(name: sample)}
