@@ -92,11 +92,9 @@ main {
 	width: 75%;
 	height: 100%;
 }
-
 .left-box {
 	left: 0;
 }
-
 .right-box {
 	right: 0;
 	border-left: 1px solid #22202f;
@@ -137,7 +135,21 @@ main {
   right: -25px;
   border-top: 1px solid #aaa;
 }
-
+.about_name_box {
+  margin-top: 220px;
+}
+.about_name {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 28px;
+}
+.about_icon_box {
+  margin: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 20px;
+}
+.about_icon {
+  font-size: 50px;
+}
 // ここからデザイン
 h2 {
   position: relative;
