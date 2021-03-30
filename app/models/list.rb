@@ -22,7 +22,7 @@ class List < ApplicationRecord
   attachment :image
   # バリデーション
   validates :list_title, presence: true
-  validates :description, presence: true
+  validates :description, presence: true, length: { maximum: 800 }
 
   def favorited_by?(user)
 		favorites.where(user_id: user.id).exists?
