@@ -72,8 +72,7 @@ main {
 // スライドショーのため
 #screenbox{
   height: 788px;
-  backgroung-position: center;
-  position: static;
+  // position: static;
 }
 .screenimage1 {
   background-image: image-url("pexels-lucas-pezeta-2398354.jpg");
@@ -519,6 +518,10 @@ hr {
 		position: relative;
 		width: 100%;
 		height: auto;
-
 	}
+}
+@media screen and (max-width: 480px) {
+  .logo_top {
+  left: 30%;
+  }
 }
