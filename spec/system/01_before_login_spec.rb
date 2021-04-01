@@ -50,17 +50,29 @@ describe 'ユーザログイン前のテスト', :type => :system do
       it 'タイトルが表示される' do
         expect(page).to have_content 'Bhind-Me'
       end
+      it 'トップページが表示される' do
+        expect(page).to have_content 'トップページ'
+      end
       it 'トップページリンクが表示される: 左上から2番目のリンクが「トップページ」である' do
         about_link = find_all('a')[2].native.inner_text
         expect(about_link).to match("トップページ")
+      end
+      it 'Bhind-Meについてが表示される' do
+        expect(page).to have_content 'Bhind-Meについて'
       end
       it 'Aboutページへのリンクが表示される: 左上から4番目のリンクが「Bhind-Meについて」である' do
         login_link = find_all('a')[4].native.inner_text
         expect(login_link).to match("Bhind-Meについて")
       end
+      it '新規会員登録が表示される' do
+        expect(page).to have_content '新規会員登録'
+      end
       it '新規会員登録リンクが表示される: 左上から6番目のリンクが「新規会員登録」である' do
         signup_link = find_all('a')[6].native.inner_text
         expect(signup_link).to match("新規会員登録")
+      end
+      it 'ログインが表示される' do
+        expect(page).to have_content 'ログイン'
       end
       it 'ログインリンクが表示される: 左上から8番目のリンクが「ログイン」である' do
         home_link = find_all('a')[8].native.inner_text
@@ -110,20 +122,35 @@ describe 'ユーザログイン前のテスト', :type => :system do
       it '「新規会員登録」と表示される' do
         expect(page).to have_content '新規会員登録'
       end
+      it '「名前」と表示される' do
+        expect(page).to have_content '名前'
+      end
       it '名前フォームが表示される' do
         expect(page).to have_field 'user[name]'
+      end
+      it '「メールアドレス」と表示される' do
+        expect(page).to have_content 'メールアドレス'
       end
       it 'メールフォームが表示される' do
         expect(page).to have_field 'user[email]'
       end
+      it '「パスワード (6文字以上)」と表示される' do
+        expect(page).to have_content 'パスワード (6文字以上)'
+      end
       it 'パスワードフォームが表示される' do
         expect(page).to have_field 'user[password]'
+      end
+      it '「パスワード（確認用）」と表示される' do
+        expect(page).to have_content 'パスワード（確認用）'
       end
       it '確認用パスワードフォームが表示される' do
         expect(page).to have_field 'user[password_confirmation]'
       end
       it '登録完了ボタンが表示される' do
         expect(page).to have_button '完了'
+      end
+      it '「既に会員の方はこちら」と表示される' do
+        expect(page).to have_content '既に会員の方はこちら'
       end
     end
 
@@ -154,8 +181,14 @@ describe 'ユーザログイン前のテスト', :type => :system do
       it '「会員登録がまだお済みでない方はこちら」と表示される' do
         expect(page).to have_content '会員登録がまだお済みでない方はこちら'
       end
+      it '「メールアドレス」と表示される' do
+        expect(page).to have_content 'メールアドレス'
+      end
       it 'emailフォームが表示される' do
         expect(page).to have_field 'user[email]'
+      end
+      it '「パスワード」と表示される' do
+        expect(page).to have_content 'パスワード'
       end
       it 'passwordフォームが表示される' do
         expect(page).to have_field 'user[password]'
