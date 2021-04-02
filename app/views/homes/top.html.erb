@@ -9,13 +9,13 @@
 		</div>
 	</div>
 	<div class="text_base mt-3">
-		<h4 class=""><span>人気ムービーリスト</span></h4>
+		<h4 class="gnavi"><a href="#"><span class="text_base">POPULAR LIST</span><span class="text_base">人気ムービーリスト</span></a></h4>
 			<% @lists.each do |list| %>
 				<div class="top_rank mypage_list">
 					<div class="media mt-3">
       		  <div class="d-flex m-3"><%= attachment_image_tag list, :image, size: "150x100", fallback: "no_image.jpg" %></div>
       		  <div class="media-body">
-      		    <h5 class="mt-3"><%= link_to list.list_title, list_path(list.id), class:"text_base" %></h5>
+      		    <h5 class="mt-3"><%= link_to list.list_title, list_path(list.id), class:"text-decoration-none text_base" %></h5>
       		    <div>by <%= list.user.name %></div>
       		    <% list.categories.each do |category| %>
       		      <div class="badge badge-secondary">

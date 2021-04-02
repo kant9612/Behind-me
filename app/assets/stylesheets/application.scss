@@ -55,6 +55,46 @@ footer {
   height: 0;
   padding: 0;
 }
+// 各ページ項目のデザイン
+.gnavi a{
+    /*テキストの基点とするためrelativeを指定*/
+  position: relative;
+    /*はみ出る要素を隠す*/
+  overflow: hidden;
+  padding:10px 60px;
+}
+
+.gnavi span{
+    /*絶対配置でテキストの位置を決める*/
+  position: absolute;
+  left: 50%;
+  top:0;
+    /*アニメーションの指定*/
+  transition: all .5s;
+  transform: translate(-50%, 0);/*X方向に-50% ※中央寄せにするため*/
+  /*ブロック要素にして透過なし、テキスト折り返しなし*/
+  display: block;
+  opacity:1;
+  white-space: nowrap;
+}
+
+/*差し替わるテキストの設定*/
+.gnavi span:nth-child(2){
+  opacity:0;/*透過0に*/
+    transform: translate(-50%,100%);/*X方向に-50% Y方向に100%*/
+}
+
+/*hoverするとテキストが入れ替わる設定*/
+.gnavi:hover span:nth-child(1){
+  opacity:0;/*透過0に*/
+    transform: translate(-50%,-100%);/*X方向に-50% Y方向に-100%*/
+}
+
+.gnavi:hover span:nth-child(2){
+  opacity:1;/*不透明に*/
+  transform: translate(-50%, 0);/*X方向に-50% Y方向に0*/
+}
+// 各ページ項目のデザインここまで
 main {
   font-family: 'Noto Sans JP', sans-serif;
 }
@@ -260,15 +300,6 @@ h4:before {
 }
 .top_rank {
   margin-left: 300px;
-}
-.rank_box {
-  display: flex;
-  float: left;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 50px auto;
-  // width: 400px;
-  list-style: none;
 }
 .rank_img_box {
   width: 320px;
