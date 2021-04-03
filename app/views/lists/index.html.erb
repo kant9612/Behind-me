@@ -20,7 +20,7 @@
       </table>
 	  </div>
 	  <div class="col-md-8 offset-md-1">
-      <% @lists.each do |list| %>
+      <% @lists.reverse.each do |list| %>
         <div class="mypage_list">
           <div class="media mt-3">
             <div class="d-flex m-3"><%= attachment_image_tag list, :image, size: "150x100", fallback: "no_image.jpg" %></div>
