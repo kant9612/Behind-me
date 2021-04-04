@@ -8,11 +8,11 @@
     </div>
     <div class="row mt-2">
       <div class="col">
-        <div class="offset-6">following</div>
+        <div class="offset-3">フォロー中</div>
         <div class="offset-9"><%= link_to user.followings.count, user_followings_path(user), class:"text_base" %></div>
       </div>
       <div class="col">
-        <div class="">followers</div>
+        <div class="">フォロワー</div>
         <div class="offset-3"><%= link_to user.followers.count, user_followers_path(user), class:"text_base" %></div>
       </div>
     </div>
