@@ -30,6 +30,7 @@
                   <li class="menu_item"><a href="#"><%= link_to "マイページ", user_path(current_user.id), class:'nav-link text_base' %></a></li>
                   <li class="menu_item"><a href="#"><%= link_to "ユーザー", users_path, class: 'nav-link text_base' %></a></li>
                   <li class="menu_item"><a href="#"><%= link_to "ムービーリスト", lists_path, class: 'nav-link text_base' %></a></li>
+                  <li class="menu_item"><a href="#"><%= link_to "新規投稿", new_list_path, class: 'nav-link text_base' %></a></li>
                   <li class="menu_item"><a href="#"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text_base' %></a></li>
                   <li class="menu_item"><%= render 'layouts/search' %></li>
                 <% else %>
