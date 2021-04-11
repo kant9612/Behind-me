@@ -1,12 +1,12 @@
 <%- if controller_name != 'sessions' %>
   <div class="mt-5">
-    <%= link_to "既に会員の方はこちら", new_session_path(resource_name), class:"text_base" %><br />
+    <%= link_to "既に会員の方はこちら", new_session_path(resource_name), class:"text-decoration-none text_base" %><br />
   </div>
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <div class="mt-5">
-    <%= link_to "会員登録がまだお済みでない方はこちら", new_registration_path(resource_name), class:"text_base" %><br />
+    <%= link_to "会員登録がまだお済みでない方はこちら", new_registration_path(resource_name), class:"text-decoration-none text_base" %><br />
   </div>
 <% end %>
 

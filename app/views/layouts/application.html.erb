@@ -25,6 +25,7 @@
             <div class="row justify-content-center">
               <div class="col-md-4 mt-5">
                 <div class="text-center mt-5"><%= link_to "Bhind-Me", root_path, class: 'text_base logo menu_logo' %></div>
+                <!--ハンバーガーメニュー内容-->
                 <ul class="mt-5">
                 <% if user_signed_in? %>
                   <li class="menu_item"><a href="#"><%= link_to "マイページ", user_path(current_user.id), class:'nav-link text_base' %></a></li>
@@ -44,6 +45,7 @@
             </div>
           </div>
 
+          <!--ハンバーガーメニュー見た目-->
           <div id="hm-icon">
             <a class="menu-trigger" href="#">
               <span></span>
@@ -61,13 +63,12 @@
           <div class="mb-5 mt-2"><%= link_to "Bhind-Me", root_path, class: 'text-decoration-none text_base logo menu_logo' %></div>
         </div>
       <% end %>
-      <!--スライドショーのため-->
+      <!--スライドショー-->
       <%= javascript_include_tag 'skippr.min', 'data-turbolinks-track': 'reload' %>
       <%= yield %>
-
     </main>
-
   </body>
+
   <footer id="footer">
     <p id="page-top"><a href="#">Page Top</a></p>
     <% unless current_page?(home_about_path) %>
