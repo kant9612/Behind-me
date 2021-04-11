@@ -2,7 +2,17 @@ ja:
   activerecord:
     models:
       list: リスト
+      movie: 映画
     attributes:
       list:
-        list_title: タイトル
-        description: 説明文
+        list_title: ムービリストタイトル
+        description: ムービーリスト説明文
+      list/movies:
+        title: 映画タイトル
+      user:
+        email: メールアドレス
+        password: パスワード
+        name: 名前
+  devise:
+    failure:
+      invalid: "入力内容を確認してください。"
