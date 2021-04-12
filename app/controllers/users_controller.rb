@@ -8,13 +8,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @lists = @user.lists.all.page(params[:page]).per(5)
-    # ログイン中のユーザーのお気に入りのlist_idカラムを取得
-    favorite = Favorite.where(user_id: current_user.id).pluck(:list_id)
-    # postsテーブルから、お気に入り登録済みのレコードを取得
-    @favorite_list = List.find(favorite)
-    # いいね一覧用
-    like = Like.where(user_id: current_user.id).pluck(:list_id)
-    @like_list = List.find(like)
+
+    favorite = Favorite.where(user_id: current_user.id).pluck(:list_id) # ログイン中ユーザーのお気に入りのlist_idカラムを取得
+    @favorite_list = List.find(favorite) # listsテーブルから、お気に入り登録済みのレコードを取得
+
+    like = Like.where(user_id: current_user.id).pluck(:list_id) # ログイン中ユーザーのいいねのlist_idカラムを取得
+    @like_list = List.find(like) # listsテーブルから、いいね登録済みのレコードを取得
   end
 
   def edit

@@ -8,6 +8,8 @@
 			<%= link_to "映画リスト一覧へ", lists_path, class: "btn btn-md text_base btn_base" %>
 		</div>
 	</div>
+
+	<!--ログインしている場合 人気リストランキングを表示-->
 	<div class="text_base mt-3">
 		<h4 class="gnavi"><a href="#"><span class="text_base">POPULAR LIST</span><span class="text_base">人気ムービーリスト</span></a></h4>
 			<% @lists.each do |list| %>
@@ -41,7 +43,9 @@
 			</div>
 	</div>
 </div>
+
 <% else %>
+<!--ログインしていない場合 スライドショーを表示-->
 	<div id="screenbox", class="logo_box">
 		<div id="screenimages">
 			<div class="screenimage1"></div>

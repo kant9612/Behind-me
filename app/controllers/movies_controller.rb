@@ -5,8 +5,6 @@ class MoviesController < ApplicationController
     @list = List.find(params[:list_id])
 		@movie = Movie.new(movie_params)
 		@movie.user = current_user
-		# @movie.list_id = @list.id
-		# @movie.user_id = current_user.id
 		@movie.save
 		redirect_to edit_list_path(@list)
   end
