@@ -70,7 +70,9 @@
   </body>
 
   <footer id="footer">
+    <!--画面右下にページのトップに戻るボタンを表示-->
     <p id="page-top"><a href="#">Page Top</a></p>
+    <!--aboutページではfooterを表示しない-->
     <% unless current_page?(home_about_path) %>
       <p class="text-center mt-5">&copy; 2021 Bhind-Me</p>
     <% end %>

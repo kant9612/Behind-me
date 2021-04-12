@@ -1,10 +1,11 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+
   # インスタンス変数に空のインスタンスを渡して、リストの投稿ができるようにする
   def new
     @list = List.new
-    @movies = @list.movies.build
+    @movies = @list.movies.build #cocoonでlistを保存する時moviesも同時保存するため
   end
 
   def create
@@ -19,8 +20,8 @@ class ListsController < ApplicationController
   end
 
   def index
-    @lists = List.all.page(params[:page]).per(5)
-    @categories = Category.all
+    @lists = List.all.page(params[:page]).per(8) #1ページあたり8つまで表示しページネーション
+    @categories = Category.all #カテゴリー検索できるようにview画面左側にカテゴリーリストを表示
   end
 
   def show
@@ -56,6 +57,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
+    # 1つの映画リストに対してカテゴリーが1つに限らない
     params.require(:list).permit(:image, :list_title, :description, category_ids: [], movies_attributes: [:id, :title, :impression, :list_id, :user_id])
   end
 

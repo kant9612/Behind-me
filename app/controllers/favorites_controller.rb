@@ -6,12 +6,14 @@ class FavoritesController < ApplicationController
     @list = List.find(params[:list_id])
     favorite = @list.favorites.new(user_id: current_user.id)
     favorite.save
+    #非同期通信でview/favorites/create.js.erbを読み込みに行く
   end
 
   def destroy
     @list = List.find(params[:list_id])
     favorite = @list.favorites.find_by(user_id: current_user.id)
     favorite.destroy
+    #非同期通信でview/favorites/destroy.js.erbを読み込みに行く
   end
 
   private

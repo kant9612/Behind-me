@@ -14,9 +14,11 @@ class SearchController < ApplicationController
     if model == 'user'
       User.where(name: content)
     elsif model == 'list'
-      List.joins(:list_categories).where('list_categories.category_id = ?', content)
+      List.joins(:list_categories).where('list_categories.category_id = ?', content) #カテゴリ検索
     end
   end
+
+  # userとlistのあいまい検索
   def partical(model, content)
     if model == 'user'
       User.where("name LIKE ?", "%#{content}%")
@@ -24,6 +26,7 @@ class SearchController < ApplicationController
       List.where("list_title LIKE ?", "%#{content}%")
     end
   end
+
   def search_for(how, model, content)
     case how
     when 'match'
@@ -32,4 +35,5 @@ class SearchController < ApplicationController
       partical(model, content)
     end
   end
+
 end

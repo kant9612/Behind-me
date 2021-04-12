@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
 		@list = List.find(params[:list_id])
 		@review = @list.reviews.find(params[:id])
 		@review.destroy
-		redirect_to request.referer
+			redirect_to request.referer
 	end
 
 	private
@@ -22,16 +22,5 @@ class ReviewsController < ApplicationController
 	def review_params
 		params.require(:review).permit(:comment, :rate)
 	end
-	
-	def test
-		result = "すごいうまい"
-		
-		if (seed == "にんじん")
-			result = "にんじんだったわ"
-		end
-			
-		imo = "じゃがいも" + result + "の" # じゃがいもすごいうまい
-		imo = "じゃがいも#{result}の#{result2}"
-		
-	end
+
 end
