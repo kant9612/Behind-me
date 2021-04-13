@@ -2,7 +2,6 @@ class ListsController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
-  # インスタンス変数に空のインスタンスを渡して、リストの投稿ができるようにする
   def new
     @list = List.new
     @movies = @list.movies.build #cocoonでlistを保存する時moviesも同時保存するため

@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   before_action :set_list
-  before_action :authenticate_user! # ログイン中のユーザーのみに許可（未ログインなら、ログイン画面へ移動）
+  before_action :authenticate_user!
 
   def create
     @list = List.find(params[:list_id])
