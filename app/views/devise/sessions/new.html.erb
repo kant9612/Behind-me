@@ -9,12 +9,12 @@
 
       <div class="field">
         <%= f.label :メールアドレス %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"abc@amail.com" %>
       </div>
 
       <div class="field mt-3">
         <%= f.label :パスワード %><br />
-        <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
+        <%= f.password_field :password, autocomplete: "current-password", class:"form-control", placeholder:"6文字以上で入力してください" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
